@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://j7fovbaykipi"]
+
+[ext_resource type="Script" uid="uid://jx7p6aw0xrkj" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b01mv12p08151" path="res://login.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cjnc0ri8eobxq" path="res://backround.png" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dk4fjmfdlgyd" path="res://logo.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bf4kkfmckkml0" path="res://register.tscn" id="5_lquwl"]
+
+[node name="MainMenu" type="Control" unique_id=368910165]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1bvp3")
+
+[node name="Fade" type="ColorRect" parent="." unique_id=2143811968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="." unique_id=1578230221]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.749, 0.633)
+pivot_offset = Vector2(768, 512)
+mouse_filter = 2
+texture = ExtResource("2_lquwl")
+
+[node name="LogoContainer" parent="." unique_id=1266224242 instance=ExtResource("4_lquwl")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+mouse_filter = 2
+
+[node name="Login" parent="." unique_id=133710209 instance=ExtResource("2_0xm2m")]
+layout_mode = 1
+scale = Vector2(1, 0.9776926)
+mouse_filter = 2
+
+[node name="Register" parent="." unique_id=133040752 instance=ExtResource("5_lquwl")]
+layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1337859966]
+
+[node name="Timer" type="Timer" parent="." unique_id=765071499]

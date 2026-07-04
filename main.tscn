@@ -53,7 +53,6 @@ mouse_filter = 2
 
 [node name="Login" parent="." unique_id=133710209 instance=ExtResource("2_0xm2m")]
 layout_mode = 1
-scale = Vector2(1, 0.9776926)
 mouse_filter = 2
 
 [node name="Register" parent="." unique_id=133040752 instance=ExtResource("5_lquwl")]

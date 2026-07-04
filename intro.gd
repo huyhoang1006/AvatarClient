@@ -1,26 +1,15 @@
-extends Control
+extends Node2D
 
-@onready var image = $TextureRect
-
-var current_image = 1
+@onready var side_view = $SideView
+@onready var top_view = $TopView
+@onready var anim_player = $AnimationPlayer
 
 
 func _ready():
-	play_intro()
+	anim_player.play("intro")
 
+	if side_view:
+		side_view.play("working")
 
-func play_intro():
-
-	while current_image <= 18:
-
-		var path = "res://Intro_game/%d.png" % current_image
-
-		print(path)
-
-		image.texture = load(path)
-
-		current_image += 1
-
-		await get_tree().create_timer(2.5).timeout
-
-	print("INTRO DONE")
+	if top_view:
+		top_view.play("working")

@@ -1,0 +1,21 @@
+{ "frames": {
+   "map 6.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 200, "h": 200 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 200, "h": 200 },
+    "sourceSize": { "w": 200, "h": 200 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.17-x64",
+  "image": "map_6.png",
+  "format": "RGBA8888",
+  "size": { "w": 200, "h": 200 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

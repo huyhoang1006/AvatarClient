@@ -1,0 +1,69 @@
+{ "frames": {
+   "fish_jump_from_pond 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "sourceSize": { "w": 108, "h": 108 },
+    "duration": 100
+   },
+   "fish_jump_from_pond 1.aseprite": {
+    "frame": { "x": 108, "y": 0, "w": 108, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "sourceSize": { "w": 108, "h": 108 },
+    "duration": 100
+   },
+   "fish_jump_from_pond 2.aseprite": {
+    "frame": { "x": 216, "y": 0, "w": 108, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "sourceSize": { "w": 108, "h": 108 },
+    "duration": 100
+   },
+   "fish_jump_from_pond 3.aseprite": {
+    "frame": { "x": 324, "y": 0, "w": 108, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "sourceSize": { "w": 108, "h": 108 },
+    "duration": 100
+   },
+   "fish_jump_from_pond 4.aseprite": {
+    "frame": { "x": 432, "y": 0, "w": 108, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "sourceSize": { "w": 108, "h": 108 },
+    "duration": 100
+   },
+   "fish_jump_from_pond 5.aseprite": {
+    "frame": { "x": 540, "y": 0, "w": 108, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "sourceSize": { "w": 108, "h": 108 },
+    "duration": 100
+   },
+   "fish_jump_from_pond 6.aseprite": {
+    "frame": { "x": 648, "y": 0, "w": 108, "h": 108 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 108, "h": 108 },
+    "sourceSize": { "w": 108, "h": 108 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.17-x64",
+  "image": "fish_jump_from_pond.png",
+  "format": "RGBA8888",
+  "size": { "w": 756, "h": 108 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

@@ -1,0 +1,21 @@
+{ "frames": {
+   "nha_ba_gian.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 768, "h": 256 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 768, "h": 256 },
+    "sourceSize": { "w": 768, "h": 256 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.17-x64",
+  "image": "nha_ba_gian.png",
+  "format": "RGBA8888",
+  "size": { "w": 768, "h": 256 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

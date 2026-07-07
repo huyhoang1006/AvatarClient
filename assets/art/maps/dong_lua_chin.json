@@ -1,0 +1,149 @@
+{ "frames": {
+   "dong lua chin 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 1.aseprite": {
+    "frame": { "x": 180, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 2.aseprite": {
+    "frame": { "x": 360, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 3.aseprite": {
+    "frame": { "x": 540, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 4.aseprite": {
+    "frame": { "x": 720, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 5.aseprite": {
+    "frame": { "x": 900, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 6.aseprite": {
+    "frame": { "x": 1080, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 7.aseprite": {
+    "frame": { "x": 1260, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 8.aseprite": {
+    "frame": { "x": 1440, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 9.aseprite": {
+    "frame": { "x": 1620, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 10.aseprite": {
+    "frame": { "x": 1800, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 11.aseprite": {
+    "frame": { "x": 1980, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 12.aseprite": {
+    "frame": { "x": 2160, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 13.aseprite": {
+    "frame": { "x": 2340, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 14.aseprite": {
+    "frame": { "x": 2520, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 15.aseprite": {
+    "frame": { "x": 2700, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   },
+   "dong lua chin 16.aseprite": {
+    "frame": { "x": 2880, "y": 0, "w": 180, "h": 180 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 180, "h": 180 },
+    "sourceSize": { "w": 180, "h": 180 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.17-x64",
+  "image": "dong_lua_chin.png",
+  "format": "RGBA8888",
+  "size": { "w": 3060, "h": 180 },
+  "scale": "1",
+  "frameTags": [
+  ]
+ }
+}

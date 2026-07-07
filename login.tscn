@@ -319,5 +319,3 @@ text = "Register"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=532401023]
 
-[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/PasswordContainer/EyeButton" to="." method="_on_eye_button_pressed"]
-[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/RegisterButton" to="." method="_on_register_button_pressed"]

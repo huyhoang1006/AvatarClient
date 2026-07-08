@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var side_view = $SideView
 @onready var top_view = $TopView
-@onready var anim_player = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var working_view = $working
 @onready var map2 = $map2
 @onready var bus = $bus

@@ -17,7 +17,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="AvartaClient"
 run/main_scene="uid://j7fovbaykipi"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-<<<<<<<HEADrun/main_scene="uid://ch6rspqiy5i8i"
+
+[autoload]
+
+GameState="*res://game_state.gd"
 
 [rendering]
 

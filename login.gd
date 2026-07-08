@@ -51,11 +51,11 @@ func _on_login_pressed() -> void:
 
 	if username == FIXED_USERNAME and password == FIXED_PASSWORD:
 		print("Đăng nhập thành công")
-		var err := get_tree().change_scene_to_file("res://scenes/intro_cinema.tscn")
+		var err := get_tree().change_scene_to_file("res://intro.tscn")
 		if err != OK:
 			error_label.text = "Lỗi mở intro (mã %d) — báo dev!" % err
 			error_label.visible = true
-			push_error("change_scene intro_cinema loi: %d" % err)
+			push_error("change_scene intro loi: %d" % err)
 	else:
 		error_label.text = "Sai tài khoản hoặc mật khẩu! (demo: admin / 123456)"
 		error_label.visible = true

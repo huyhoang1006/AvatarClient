@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cjb2ifb4yrpcb" path="res://intro_game/map_6-Sheet.png" id="10_4lera"]
 [ext_resource type="Texture2D" uid="uid://c87m72qxxkgk7" path="res://intro_game/bus_1-Sheet.png" id="11_j5xtj"]
 [ext_resource type="Texture2D" uid="uid://d1iwm6r3mdk8r" path="res://intro_game/map_9-Sheet.png" id="12_xib78"]
-[ext_resource type="AnimationLibrary" uid="uid://bnhq5iyqfsc7o" path="res://assets/animations/intro_animations.tres" id="13_m4pa7"]
+[ext_resource type="AnimationLibrary" path="res://assets/animations/intro_animations.tres" id="13_m4pa7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44m4d"]
 atlas = ExtResource("1_inl87")

@@ -1033,7 +1033,6 @@ animations = [{
 "speed": 5.0
 }]
 
-
 [node name="Intro_2" type="Node2D" unique_id=2543440]
 script = ExtResource("1_44m4d")
 
@@ -1108,7 +1107,7 @@ animation = &"Bus"
 frame = 31
 frame_progress = 0.49343327
 
-[node name="map9" type="AnimatedSprite2D" parent="." unique_id=170480785]
+[node name="map_9" type="AnimatedSprite2D" parent="." unique_id=170480785]
 visible = false
 position = Vector2(642.5, 346)
 scale = Vector2(6.4749994, 3.93)

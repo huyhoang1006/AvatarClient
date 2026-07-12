@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" format=3 uid="uid://bnhq5iyqfsc7o"]
+[gd_resource type="AnimationLibrary" format=3 uid="uid://cfrctv1mtx4xw"]
 
 [sub_resource type="Animation" id="Animation_44m4d"]
 length = 0.001
@@ -546,6 +546,7 @@ tracks/44/keys = {
 [sub_resource type="Animation" id="Animation_gxpyh"]
 resource_name = "intro"
 length = 50.0
+step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

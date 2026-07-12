@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bv4k4ry4efl0k"]
+[gd_scene format=3 uid="uid://bv87l3fy03u62"]
 
 [ext_resource type="Script" uid="uid://c4xree7ucn4u" path="res://intro.gd" id="1_44m4d"]
 [ext_resource type="Texture2D" uid="uid://dtkb8cm4kqmmh" path="res://intro_game/map 1-Sheet.png" id="1_inl87"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cjb2ifb4yrpcb" path="res://intro_game/map_6-Sheet.png" id="10_4lera"]
 [ext_resource type="Texture2D" uid="uid://c87m72qxxkgk7" path="res://intro_game/bus_1-Sheet.png" id="11_j5xtj"]
 [ext_resource type="Texture2D" uid="uid://d1iwm6r3mdk8r" path="res://intro_game/map_9-Sheet.png" id="12_xib78"]
-[ext_resource type="AnimationLibrary" path="res://assets/animations/intro_animations.tres" id="13_m4pa7"]
+[ext_resource type="AnimationLibrary" uid="uid://cfrctv1mtx4xw" path="res://assets/animations/intro_animations.tres" id="13_tres"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44m4d"]
 atlas = ExtResource("1_inl87")
@@ -1028,7 +1028,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_na48x")
 }],
-"loop": true,
+"loop": false,
 "name": &"map9",
 "speed": 5.0
 }]
@@ -1107,7 +1107,7 @@ animation = &"Bus"
 frame = 31
 frame_progress = 0.49343327
 
-[node name="map_9" type="AnimatedSprite2D" parent="." unique_id=170480785]
+[node name="map9" type="AnimatedSprite2D" parent="." unique_id=170480785]
 visible = false
 position = Vector2(642.5, 346)
 scale = Vector2(6.4749994, 3.93)
@@ -1128,4 +1128,4 @@ grow_vertical = 2
 color = Color(6.180691e-05, 6.180692e-05, 6.180691e-05, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2099949164]
-libraries/ = ExtResource("13_m4pa7")
+libraries/ = ExtResource("13_tres")

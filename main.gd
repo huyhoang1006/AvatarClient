@@ -2,6 +2,8 @@ extends Control
 
 @onready var logo = $LogoContainer
 @onready var background = $Background
+@onready var fade = $Fade
+@onready var start_button = $StartButton
 
 @onready var login_ui = $Login
 @onready var register_ui = $Register
@@ -13,13 +15,10 @@ extends Control
 
 func _ready():
 
-	# Ẩn login
-	login_ui.modulate.a = 0
-
-	# Ẩn register
+	# Ẩn hết UI ban đầu
+	login_ui.visible = false
 	register_ui.visible = false
-
-	# Ẩn background
+	start_button.visible = false
 	background.modulate.a = 0
 
 	# Connect button
@@ -31,12 +30,25 @@ func _ready():
 		_on_back_to_login_pressed
 	)
 
+	start_button.pressed.connect(
+		_on_start_pressed
+	)
+
 	play_intro()
 
 
 func play_intro():
 
 	var tween = create_tween()
+
+	# Fade từ đen ra
+	fade.modulate.a = 1.0
+	tween.tween_property(
+		fade,
+		"modulate:a",
+		0.0,
+		0.5
+	)
 
 	# Hiện logo
 	logo.modulate.a = 0
@@ -67,13 +79,28 @@ func play_intro():
 		1.2
 	)
 
-	# Hiện UI Login
+	# Hiện nút Start
+	start_button.modulate.a = 0
+	start_button.visible = true
 	tween.tween_property(
-		login_ui,
+		start_button,
 		"modulate:a",
 		1.0,
 		1.0
 	)
+
+
+func _on_start_pressed():
+	if GameState.session_logged_in:
+		# Đã đăng nhập -> vào game luôn
+		var err := get_tree().change_scene_to_file("res://intro.tscn")
+		if err != OK:
+			push_error("Lỗi chuyển scene intro: %d" % err)
+	else:
+		# Chưa đăng nhập -> hiện form login
+		start_button.visible = false
+		login_ui.visible = true
+		login_ui.modulate.a = 1.0
 
 
 func _on_register_button_pressed():

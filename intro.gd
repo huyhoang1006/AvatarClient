@@ -6,7 +6,7 @@ extends Node2D
 @onready var working_view = $working
 @onready var map2 = $map2
 @onready var bus = $bus
-@onready var map_9 = $map_9
+@onready var map_9 = $map9
 
 # ---- Lời kể ----
 var narration_label: Label
@@ -49,9 +49,14 @@ var timeline := [
 func _ready():
 	_setup_music()
 	_setup_narration()
+	_ensure_intro_library()
 
-	cai.play("intro")
 	cai.animation_finished.connect(_on_intro_done)
+	if cai.has_animation("intro"):
+		cai.play("intro")
+	else:
+		push_error("intro.gd: khong tim thay animation 'intro' -> bo qua intro")
+		_on_intro_done("intro")
 	if side_view:
 		side_view.play("working")
 	if top_view:
@@ -64,6 +69,19 @@ func _ready():
 		bus.play("Bus")
 	if map_9:
 			map_9.play("map9")
+
+
+# Nạp AnimationLibrary lúc chạy để tránh lỗi UID/binding hỏng trong intro.tscn
+func _ensure_intro_library() -> void:
+	if cai.has_animation("intro"):
+		return
+	var lib := load("res://assets/animations/intro_animations.tres") as AnimationLibrary
+	if lib == null:
+		push_error("intro.gd: khong load duoc intro_animations.tres")
+		return
+	if cai.has_animation_library(""):
+		cai.remove_animation_library("")
+	cai.add_animation_library("", lib)
 
 
 func _setup_narration():

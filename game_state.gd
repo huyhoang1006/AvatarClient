@@ -43,6 +43,9 @@ var farm: Array = []
 # Quest hiện tại: {"title": String, "steps": [{"text": String, "need": int, "have": int}]}
 var quest := {}
 
+# Trạng thái phiên đăng nhập (không bị reset)
+var session_logged_in := false
+
 
 func _ready() -> void:
 	_setup_input()

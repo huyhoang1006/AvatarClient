@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var side_view = $SideView
 @onready var top_view = $TopView
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var cai = $AnimationPlayer
 @onready var working_view = $working
 @onready var map2 = $map2
 @onready var bus = $bus
@@ -49,8 +49,9 @@ var timeline := [
 func _ready():
 	_setup_music()
 	_setup_narration()
-	anim_player.play("intro")
-	anim_player.animation_finished.connect(_on_intro_done)
+
+	cai.play("intro")
+	cai.animation_finished.connect(_on_intro_done)
 	if side_view:
 		side_view.play("working")
 	if top_view:
@@ -62,7 +63,7 @@ func _ready():
 	if bus:
 		bus.play("Bus")
 	if map_9:
-		map_9.play("map9")
+			map_9.play("map9")
 
 
 func _setup_narration():
@@ -147,9 +148,9 @@ func _make_skip_sb(bg: Color) -> StyleBoxFlat:
 
 
 func _process(_delta):
-	if not anim_player or not anim_player.is_playing():
+	if not cai or not cai.is_playing():
 		return
-	var t: float = anim_player.current_animation_position
+	var t: float = cai.current_animation_position
 	var new_text := ""
 	for seg in timeline:
 		if t >= seg[0] and t < seg[1]:
@@ -180,8 +181,8 @@ func _on_intro_done(_anim_name: String) -> void:
 
 func _skip_intro() -> void:
 	# Dừng animation, ẩn narration, tắt nhạc, chuyển ngay
-	if anim_player and anim_player.is_playing():
-		anim_player.stop()
+	if cai and cai.is_playing():
+		cai.stop()
 	if music_player and music_player.playing:
 		music_player.stop()
 	narration_bg.visible = false

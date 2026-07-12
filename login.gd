@@ -51,6 +51,7 @@ func _on_login_pressed() -> void:
 
 	if username == FIXED_USERNAME and password == FIXED_PASSWORD:
 		print("Đăng nhập thành công")
+		GameState.session_logged_in = true
 		var err := get_tree().change_scene_to_file("res://intro.tscn")
 		if err != OK:
 			error_label.text = "Lỗi mở intro (mã %d) — báo dev!" % err

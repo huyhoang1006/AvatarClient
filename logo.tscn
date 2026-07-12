@@ -12,6 +12,9 @@ scale = Vector2(1.0027541, 1)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="Bg" type="ColorRect" parent="." unique_id=2001]
+layout_mode = 2
+
 [node name="Logo" type="TextureRect" parent="." unique_id=1997520135]
 layout_mode = 2
 texture = ExtResource("1_iyh20")

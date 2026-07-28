@@ -314,5 +314,7 @@ func _use_bed() -> void:
 func _chuyen_ngay(title: String, lines: Array) -> void:
 	await hud.fade_out(0.8)
 	GameState.sleep_next_day()
+	# Hết ngày là mốc quan trọng nhất — ghi thẳng xuống Postgres, đừng đợi autosave.
+	AvatarClient.save_progress()
 	await hud.summary(title, lines, "Sang Ngày %d" % GameState.day)
 	get_tree().change_scene_to_file("res://scenes/scene_nha.tscn")

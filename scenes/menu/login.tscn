@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bsny7xx2ndwpv"]
+[gd_scene format=3 uid="uid://b01mv12p08151"]
 
-[ext_resource type="Script" path="res://login.gd" id="1_3n56f"]
-[ext_resource type="Texture2D" path="res://eye_open.png" id="1_cau7c"]
+[ext_resource type="Script" uid="uid://cvht0xt1hchhv" path="res://scenes/menu/login.gd" id="1_3n56f"]
+[ext_resource type="Texture2D" uid="uid://caafmgqkd27x5" path="res://assets/ui/eye_open.png" id="1_cau7c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tajqu"]
 content_margin_left = 0.0
@@ -318,3 +318,4 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_0s12h")
 text = "Register"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=532401023]
+

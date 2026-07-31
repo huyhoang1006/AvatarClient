@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://dvytbdy75cp1b"]
+[gd_scene format=3 uid="uid://djeijji4ogncx"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bsny7xx2ndwpv" path="res://login.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bec5pwsynty8o" path="res://login.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" path="res://backround.png" id="2_lquwl"]
-[ext_resource type="PackedScene" uid="uid://c2dwekqnxsi0k" path="res://logo.tscn" id="4_lquwl"]
-[ext_resource type="PackedScene" uid="uid://boe1dq5tc8isd" path="res://register.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://diys173qclq5i" path="res://logo.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cc407cglr1htf" path="res://register.tscn" id="5_lquwl"]
 
 [node name="MainMenu" type="Control" unique_id=368910165]
 layout_mode = 3

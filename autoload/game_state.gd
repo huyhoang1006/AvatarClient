@@ -46,12 +46,99 @@ var quest := {}
 # Trạng thái phiên đăng nhập (không bị reset)
 var session_logged_in := false
 
+# ---- Lưu trữ local ----
+# File trên máy mới là bản gốc; server chỉ là bản sao lưu. Nhờ vậy game chơi được
+# khi không có mạng, và khi đồng bộ thì bản local đè lên bản server.
+const SAVE_PATH := "user://save.json"
+const BACKUP_PATH := "user://save.json.bak"
+const TMP_PATH := "user://save.json.tmp"
+const SAVE_VERSION := 1
+
+## true nếu lúc khởi động đã đọc được save từ đĩa. Dùng để quyết định khi đồng bộ:
+## có dữ liệu cũ trên máy thì đẩy lên đè server, không có thì lấy bản server về.
+var loaded_from_local := false
+
 
 func _ready() -> void:
 	_setup_input()
 	if farm.is_empty():
 		for i in range(8):
 			farm.append({"tilled": false, "type": "", "stage": 0, "watered": false})
+	loaded_from_local = load_local()
+
+
+# ---------- Lưu / nạp trên đĩa ----------
+## Ghi ra file tạm rồi mới đổi tên, và giữ lại một bản .bak. Mất điện đúng lúc đang
+## ghi thì cùng lắm hỏng file tạm, save cũ vẫn còn nguyên.
+func save_local() -> bool:
+	var payload := {
+		"version": SAVE_VERSION,
+		"saved_at": Time.get_unix_time_from_system(),
+		"state": to_dict(),
+	}
+
+	var f := FileAccess.open(TMP_PATH, FileAccess.WRITE)
+	if f == null:
+		push_error("GameState: khong mo duoc file tam (ma %d)" % FileAccess.get_open_error())
+		return false
+	f.store_string(JSON.stringify(payload))
+	f.close()
+
+	var dir := DirAccess.open("user://")
+	if dir == null:
+		return false
+	if dir.file_exists("save.json"):
+		if dir.file_exists("save.json.bak"):
+			dir.remove("save.json.bak")
+		dir.rename("save.json", "save.json.bak")
+	if dir.rename("save.json.tmp", "save.json") != OK:
+		push_error("GameState: khong doi ten duoc file save")
+		return false
+	return true
+
+
+func has_local_save() -> bool:
+	return FileAccess.file_exists(SAVE_PATH) or FileAccess.file_exists(BACKUP_PATH)
+
+
+## Nạp save từ đĩa. Nếu file chính hỏng thì thử bản .bak. Trả về false nếu không có gì đọc được.
+func load_local() -> bool:
+	for p in [SAVE_PATH, BACKUP_PATH]:
+		var state := _read_save_file(p)
+		if not state.is_empty():
+			from_dict(state)
+			return true
+	return false
+
+
+func _read_save_file(p: String) -> Dictionary:
+	if not FileAccess.file_exists(p):
+		return {}
+	var f := FileAccess.open(p, FileAccess.READ)
+	if f == null:
+		return {}
+	var raw := f.get_as_text()
+	f.close()
+
+	var parsed = JSON.parse_string(raw)
+	if not parsed is Dictionary:
+		push_warning("GameState: %s khong phai JSON hop le, bo qua" % p)
+		return {}
+	var d: Dictionary = parsed
+	if not d.get("state", null) is Dictionary:
+		push_warning("GameState: %s thieu field 'state', bo qua" % p)
+		return {}
+	return d["state"]
+
+
+## Chưa chơi gì cả — dùng để biết có nên lấy tiến trình từ server về không.
+func is_fresh() -> bool:
+	return day <= 1 and inventory.is_empty() and flags.is_empty() and quest.is_empty()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		save_local()
 
 
 func reset() -> void:
@@ -65,6 +152,64 @@ func reset() -> void:
 	farm = []
 	for i in range(8):
 		farm.append({"tilled": false, "type": "", "stage": 0, "watered": false})
+
+
+# ---------- Đồng bộ với server ----------
+## Gói toàn bộ tiến trình để gửi lên AvatarServer.
+func to_dict() -> Dictionary:
+	return {
+		"player_name": player_name,
+		"day": day,
+		"stamina": stamina,
+		"water": water,
+		"water_max": water_max,
+		"inventory": inventory.duplicate(true),
+		"flags": flags.duplicate(true),
+		"quest": quest.duplicate(true),
+		"farm": farm.duplicate(true),
+	}
+
+
+## Nạp tiến trình server trả về. Field nào thiếu thì giữ nguyên giá trị đang có.
+## Số qua JSON có thể về dạng float nên ép kiểu lại hết, tránh việc gameplay
+## so sánh stage/số lượng bị lệch.
+func from_dict(d: Dictionary) -> void:
+	player_name = str(d.get("player_name", player_name))
+	day = int(d.get("day", day))
+	water = int(d.get("water", water))
+	water_max = int(d.get("water_max", water_max))
+
+	var inv = d.get("inventory", null)
+	if inv is Dictionary:
+		inventory = {}
+		for id in inv:
+			var n := int(inv[id])
+			if n > 0:
+				inventory[str(id)] = n
+
+	if d.get("flags", null) is Dictionary:
+		flags = (d["flags"] as Dictionary).duplicate(true)
+
+	if d.get("quest", null) is Dictionary:
+		quest = (d["quest"] as Dictionary).duplicate(true)
+		for st in quest.get("steps", []):
+			st["need"] = int(st.get("need", 0))
+			st["have"] = int(st.get("have", 0))
+
+	var f = d.get("farm", null)
+	if f is Array and (f as Array).size() == farm.size():
+		for i in range(farm.size()):
+			var src: Dictionary = f[i] if f[i] is Dictionary else {}
+			farm[i] = {
+				"tilled": bool(src.get("tilled", false)),
+				"type": str(src.get("type", "")),
+				"stage": int(src.get("stage", 0)),
+				"watered": bool(src.get("watered", false)),
+			}
+
+	set_stamina(float(d.get("stamina", stamina)))
+	inventory_changed.emit()
+	quest_changed.emit()
 
 
 # ---------- Túi đồ ----------

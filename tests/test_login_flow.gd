@@ -31,7 +31,7 @@ func _ready() -> void:
 func _test_scene_wiring() -> void:
 	print("\n--- test 1: node path trong scene ---")
 
-	var login = preload("res://login.tscn").instantiate()
+	var login = preload("res://scenes/menu/login.tscn").instantiate()
 	add_child(login)
 	await get_tree().process_frame
 
@@ -47,7 +47,7 @@ func _test_scene_wiring() -> void:
 	_check("login: password dang bi che", login.password_input.secret == true)
 	login.queue_free()
 
-	var reg = preload("res://register.tscn").instantiate()
+	var reg = preload("res://scenes/menu/register.tscn").instantiate()
 	add_child(reg)
 	await get_tree().process_frame
 

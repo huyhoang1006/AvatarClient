@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bf4kkfmckkml0"]
+[gd_scene format=3 uid="uid://cc407cglr1htf"]
 
-[ext_resource type="Script" uid="uid://our4hxrn7bm0" path="res://register.gd" id="1_37wl2"]
-[ext_resource type="Texture2D" uid="uid://caafmgqkd27x5" path="res://eye_open.png" id="1_r642n"]
+[ext_resource type="Script" path="res://register.gd" id="1_37wl2"]
+[ext_resource type="Texture2D" path="res://eye_open.png" id="1_r642n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tajqu"]
 content_margin_left = 0.0

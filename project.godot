@@ -20,8 +20,8 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
-GameState="*res://game_state.gd"
-AvatarClient="*res://avatar_client.gd"
+GameState="*res://autoload/game_state.gd"
+AvatarClient="*res://autoload/avatar_client.gd"
 
 [rendering]
 

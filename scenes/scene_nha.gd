@@ -134,7 +134,7 @@ func _after_fade() -> void:
 func _open_minigame() -> void:
 	player.busy = true
 	hud.modal_open = true
-	var mg := preload("res://scenes/minigame_hanoi.gd").new()
+	var mg := preload("res://scenes/minigames/minigame_hanoi.gd").new()
 	add_child(mg)
 	mg.solved.connect(_on_breaker_fixed)
 	mg.closed.connect(func():
@@ -307,7 +307,7 @@ func _use_bed() -> void:
 				"Cảm ơn đã chơi LÀNG QUÊ IT!",
 			], "Về màn hình chính")
 			GameState.reset()
-			get_tree().change_scene_to_file("res://main.tscn")
+			get_tree().change_scene_to_file("res://scenes/menu/main.tscn")
 
 
 ## fade -> qua ngày (cây lớn nếu đã tưới) -> bảng tổng kết -> tỉnh dậy trong nhà

@@ -296,7 +296,7 @@ func _mo_minigame_binh(bit: Interactable) -> void:
 		return
 	player.busy = true
 	hud.modal_open = true
-	var mg := preload("res://scenes/minigame_lac_binh.gd").new()
+	var mg := preload("res://scenes/minigames/minigame_lac_binh.gd").new()
 	add_child(mg)
 	mg.solved.connect(func(stars: int):
 		player.busy = false

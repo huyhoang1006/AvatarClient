@@ -1,0 +1,10 @@
+keys,vi,en
+BTN_CONTINUE,Tiếp tục,Continue
+BTN_NEW_GAME,Chơi mới,New game
+BTN_SETTINGS,Cài đặt,Settings
+BTN_QUIT,Thoát game,Quit
+LABEL_RESOLUTION,Độ phân giải,Resolution
+CHECK_FULLSCREEN,Toàn màn hình,Fullscreen
+BTN_CLOSE,Đóng,Close
+BTN_PLATFORM_LOGIN,Đăng nhập qua nền tảng (sắp ra mắt),Login via platform (coming soon)
+BTN_GUEST,Chơi với tư cách khách,Play as guest

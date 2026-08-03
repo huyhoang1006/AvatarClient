@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://5riovy6f7dbc"]
+
+[ext_resource type="Script" uid="uid://bm0x5d47ipr1s" path="res://scripts/login_screen.gd" id="1_e8ckn"]
+[ext_resource type="Texture2D" uid="uid://bl3o86ixcb8j7" path="res://assets/ui/login_background.png" id="2_8q002"]
+
+[sub_resource type="Gradient" id="Gradient_m4ifk"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_faeo1"]
+gradient = SubResource("Gradient_m4ifk")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8ckn"]
+bg_color = Color(0, 0, 0, 0.15686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.84705883, 0.4509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q002"]
+bg_color = Color(0, 0, 0, 0.27450982)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="LoginScreen" type="Control" unique_id=865553487]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8ckn")
+
+[node name="Background" type="TextureRect" parent="." unique_id=663000105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8q002")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BottomOverlay" type="TextureRect" parent="." unique_id=770615056]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_faeo1")
+expand_mode = 1
+
+[node name="BottomCenter" type="CenterContainer" parent="." unique_id=1720113468]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BottomPanel" type="VBoxContainer" parent="BottomCenter" unique_id=255277266]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PlatformLoginButton" type="Button" parent="BottomCenter/BottomPanel" unique_id=1206534212]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+theme_override_font_sizes/font_size = 10
+disabled = true
+text = "Đăng nhập qua nền tảng (sắp ra mắt)"
+
+[node name="GuestButton" type="Button" parent="BottomCenter/BottomPanel" unique_id=1248688129]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9137255, 0.6901961, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8ckn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8q002")
+text = "Chơi với tư cách khách"

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://sdu65udeng6h"]
+
+[ext_resource type="Script" uid="uid://bpd8wxk8hupre" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bl3o86ixcb8j7" path="res://assets/ui/login_background.png" id="2_bqqt6"]
+
+[node name="MainMenu" type="Control" unique_id=1712904511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1362681751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bqqt6")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MenuCenter" type="CenterContainer" parent="." unique_id=452062613]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="MenuCenter" unique_id=71935121]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ContinueButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=1661799233]
+custom_minimum_size = Vector2(160, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Continue"
+
+[node name="NewGameButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=1153744365]
+custom_minimum_size = Vector2(160, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "New Game"
+
+[node name="SettingsButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=1792499850]
+custom_minimum_size = Vector2(160, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=664403771]
+custom_minimum_size = Vector2(160, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Quit
+"

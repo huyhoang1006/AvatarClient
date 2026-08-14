@@ -1,0 +1,23 @@
+~ start_cow_pasture_box
+
+Pasture Box: [[Hi|Hallo|Howdy]], your animals are hungry.
+Pasture Box: Would you like to feed your cows?
+- Yes
+	Teemo: Yeah! Lets feed my cows.
+	do GameDialogueManager.action_feed_animals()
+- Suck it cows!
+	Teemo: No, stupid cow!
+		
+=> END
+
+~ start_chicken_pasture_box
+
+Pasture Box: [[Hi|Hallo|Howdy]], your animals are hungry.
+Pasture Box: Would you like to feed your chickens?
+- Yes
+	Teemo: Yeah! Lets feed my chickens.
+	do GameDialogueManager.action_feed_animals()
+- Suck it chickens!
+	Teemo: No, stupid birds!
+		
+=> END

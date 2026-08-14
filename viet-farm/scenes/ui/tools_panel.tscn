@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/game_ui_theme.tres" id="1_2yiqu"]
+[ext_resource type="Script" path="res://scenes/ui/tools_panel.gd" id="2_0jxvs"]
+[ext_resource type="Texture2D" path="res://assets/game/objects/Basic_tools_and_meterials.png" id="2_a7ivs"]
+[ext_resource type="Texture2D" path="res://assets/game/objects/Basic_Plants.png" id="3_0jxvs"]
+[ext_resource type="Texture2D" path="res://assets/game/characters/fishing_rod.png" id="4_rod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbtgy"]
+atlas = ExtResource("2_a7ivs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3neg6"]
+atlas = ExtResource("2_a7ivs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdu3n"]
+atlas = ExtResource("2_a7ivs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62b2c"]
+atlas = ExtResource("3_0jxvs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1kta"]
+atlas = ExtResource("3_0jxvs")
+region = Rect2(0, 16, 16, 16)
+
+[node name="ToolsPanel" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_2yiqu")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_0jxvs")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_gbtgy")
+icon_alignment = 1
+
+[node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_3neg6")
+icon_alignment = 1
+
+[node name="ToolWateringCan" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_bdu3n")
+icon_alignment = 1
+
+[node name="ToolCorn" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_62b2c")
+icon_alignment = 1
+
+[node name="ToolTomato" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_n1kta")
+icon_alignment = 1
+
+[node name="ToolFishingRod" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+focus_mode = 0
+theme_type_variation = &"ToolButton"
+icon = ExtResource("4_rod")
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCorn" to="." method="_on_tool_corn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTomato" to="." method="_on_tool_tomato_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolFishingRod" to="." method="_on_tool_fishing_rod_pressed"]

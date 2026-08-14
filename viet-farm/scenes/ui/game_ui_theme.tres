@@ -1,0 +1,158 @@
+[gd_resource type="Theme" load_steps=10 format=3]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_wood_panel"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.270588, 0.192157, 0.109804, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.45, 0.32, 0.18, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_normal"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.36, 0.26, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.36, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_hover"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.45, 0.32, 0.19, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.44, 0.24, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_pressed"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.24, 0.17, 0.1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.25, 0.14, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_disabled"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2, 0.2, 0.2, 0.5)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.3, 0.3, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_focus"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.4, 0.3, 0.18, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.7, 0.4, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_tool_selected"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.45, 0.33, 0.18, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.85, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_item_panel"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.32, 0.23, 0.13, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.42, 0.3, 0.17, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_counter"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.18, 0.14, 0.09, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.3, 0.18, 1)
+
+[resource]
+DarkWoodPanel/base_type = &"PanelContainer"
+DarkWoodPanel/styles/panel = SubResource("StyleBox_wood_panel")
+DayAndNightButton/base_type = &"Button"
+DayAndNightButton/styles/disabled = SubResource("StyleBox_btn_disabled")
+DayAndNightButton/styles/focus = SubResource("StyleBox_btn_focus")
+DayAndNightButton/styles/hover = SubResource("StyleBox_btn_hover")
+DayAndNightButton/styles/normal = SubResource("StyleBox_btn_normal")
+DayAndNightButton/styles/pressed = SubResource("StyleBox_btn_pressed")
+DayAndNightCounterPanel/base_type = &"PanelContainer"
+DayAndNightCounterPanel/styles/panel = SubResource("StyleBox_counter")
+DayAndNightLabel/base_type = &"Label"
+DayAndNightLabel/colors/font_color = Color(1, 0.95, 0.8, 1)
+DayAndNightLabel/font_sizes/font_size = 14
+GameMenuButton/base_type = &"Button"
+GameMenuButton/colors/font_disabled_color = Color(0.45, 0.45, 0.45, 1)
+GameMenuButton/font_sizes/font_size = 16
+GameMenuButton/styles/disabled = SubResource("StyleBox_btn_disabled")
+GameMenuButton/styles/focus = SubResource("StyleBox_btn_focus")
+GameMenuButton/styles/hover = SubResource("StyleBox_btn_hover")
+GameMenuButton/styles/normal = SubResource("StyleBox_btn_normal")
+GameMenuButton/styles/pressed = SubResource("StyleBox_btn_pressed")
+InventoryItemPanel/base_type = &"PanelContainer"
+InventoryItemPanel/styles/panel = SubResource("StyleBox_item_panel")
+InventoryLabel/base_type = &"Label"
+InventoryLabel/colors/font_color = Color(1, 0.95, 0.8, 1)
+InventoryLabel/font_sizes/font_size = 10
+Label/colors/font_color = Color(1, 0.95, 0.8, 1)
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+ToolButton/base_type = &"Button"
+ToolButton/styles/disabled = SubResource("StyleBox_btn_disabled")
+ToolButton/styles/focus = SubResource("StyleBox_btn_focus")
+ToolButton/styles/hover = SubResource("StyleBox_btn_hover")
+ToolButton/styles/normal = SubResource("StyleBox_btn_normal")
+ToolButton/styles/pressed = SubResource("StyleBox_btn_pressed")
+ToolButtonSelected/base_type = &"Button"
+ToolButtonSelected/styles/disabled = SubResource("StyleBox_btn_disabled")
+ToolButtonSelected/styles/focus = SubResource("StyleBox_btn_tool_selected")
+ToolButtonSelected/styles/hover = SubResource("StyleBox_btn_tool_selected")
+ToolButtonSelected/styles/normal = SubResource("StyleBox_btn_tool_selected")
+ToolButtonSelected/styles/pressed = SubResource("StyleBox_btn_tool_selected")

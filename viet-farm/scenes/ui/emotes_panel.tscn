@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Theme" path="res://scenes/ui/game_ui_theme.tres" id="1_157xx"]
+[ext_resource type="Script" path="res://scenes/ui/emotes_panel.gd" id="2_gdn4g"]
+
+[node name="EmotesPanel" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_157xx")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_gdn4g")
+
+[node name="Emote" type="Control" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmoteIdleTimer" type="Timer" parent="Emote"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Emote/EmoteIdleTimer" to="." method="_on_emote_idle_timer_timeout"]

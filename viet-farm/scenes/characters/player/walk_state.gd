@@ -9,6 +9,10 @@ func _on_process(_delta : float) -> void:
 
 
 func _on_physics_process(_delta : float) -> void:
+	if not player.control_enabled:
+		player.velocity = Vector2.ZERO
+		return
+
 	var direction: Vector2 = GameInputEvents.movement_input()
 	
 	var in_water := player.is_in_water()

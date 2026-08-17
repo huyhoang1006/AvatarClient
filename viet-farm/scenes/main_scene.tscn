@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://ccukydud6ahip"]
 
 [ext_resource type="PackedScene" path="res://scenes/components/day_night_cycle_component.tscn" id="1_pu3yx"]
 [ext_resource type="PackedScene" path="res://scenes/levels/level_1.tscn" id="2_gubc5"]
-[ext_resource type="PackedScene" path="res://scenes/characters/player/player.tscn" id="3_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://qkn2l3dnyj7l" path="res://scenes/characters/player/player.tscn" id="3_rt2n2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/game_screen.tscn" id="4_c16ls"]
 
 [node name="MainScene" type="Node"]
@@ -19,7 +19,7 @@ y_sort_enabled = true
 [node name="Level1" parent="GameRoot/LevelRoot" instance=ExtResource("2_gubc5")]
 
 [node name="Player" parent="GameRoot" instance=ExtResource("3_rt2n2")]
-position = Vector2(330, 240)
+position = Vector2(683, 559)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
 

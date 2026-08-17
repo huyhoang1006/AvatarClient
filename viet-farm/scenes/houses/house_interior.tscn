@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="TileSet" path="res://Tilesets/house_tile_set.tres" id="1_xnliw"]
+[ext_resource type="Script" path="res://scenes/houses/bed.gd" id="2_bed"]
+[ext_resource type="Script" path="res://scenes/houses/furniture.gd" id="3_furn"]
+[ext_resource type="Script" path="res://scenes/houses/house_exit_door.gd" id="4_exit"]
+[ext_resource type="PackedScene" path="res://scenes/components/interactable_component.tscn" id="5_interact"]
+[ext_resource type="PackedScene" path="res://scenes/components/interactable_label_component.tscn" id="6_label"]
+
+[sub_resource type="RectangleShape2D" id="bed_shape"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="small_shape"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="exit_shape"]
+size = Vector2(32, 16)
+
+[node name="HouseInterior" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Floor" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAAAAAYAAAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAEAAAABAAYAAAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAADAAYAAAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAFAAAAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAGAAAAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAAHAAAAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAEAAAAHAAYAAAABAAEAAAAIAAAAAAABAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAIAAYAAAABAAEAAAAEAAcAAAABAAEAAAAFAAcAAAABAAEAAAA=")
+tile_set = ExtResource("1_xnliw")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAAAAP//AAADAAIAAAABAP//AAADAAIAAAACAP//AAADAAIAAAADAP//AAADAAIAAAAEAP//AAADAAIAAAAFAP//AAADAAIAAAAGAP//AAADAAIAAAAHAP//AAADAAIAAAAIAP//AAADAAIAAAAJAP//AAACAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAEAAAAJAAIAAAAEAAEAAAAJAAMAAAAEAAEAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAEAAAAJAAYAAAAEAAEAAAD//wcAAAADAAIAAAAAAAcAAAABAAIAAAABAAcAAAABAAIAAAACAAcAAAABAAIAAAADAAcAAAABAAIAAAAGAAcAAAABAAIAAAAHAAcAAAABAAIAAAAIAAcAAAABAAIAAAAJAAcAAAADAAIAAAA=")
+tile_set = ExtResource("1_xnliw")
+
+[node name="Furniture" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAABAAEAAQADAAUAAAAEAAMAAQAAAAAAAAADAAMAAQABAAAAAAAFAAMAAQACAAAAAAAIAAEAAQADAAAAAAA=")
+tile_set = ExtResource("1_xnliw")
+
+[node name="Bed" type="Node2D" parent="."]
+position = Vector2(32, 24)
+script = ExtResource("2_bed")
+
+[node name="InteractableComponent" parent="Bed" instance=ExtResource("5_interact")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/InteractableComponent"]
+shape = SubResource("bed_shape")
+
+[node name="InteractableLabelComponent" parent="Bed" instance=ExtResource("6_label")]
+offset_left = -16.0
+offset_top = -28.0
+offset_right = 2.0
+offset_bottom = -10.0
+
+[node name="SleepPosition" type="Marker2D" parent="Bed"]
+position = Vector2(0, -4)
+
+[node name="WakePosition" type="Marker2D" parent="Bed"]
+position = Vector2(0, 24)
+
+[node name="Table" type="Node2D" parent="."]
+position = Vector2(72, 56)
+script = ExtResource("3_furn")
+dialogue_start_command = "start_table"
+
+[node name="InteractableComponent" parent="Table" instance=ExtResource("5_interact")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/InteractableComponent"]
+shape = SubResource("small_shape")
+
+[node name="InteractableLabelComponent" parent="Table" instance=ExtResource("6_label")]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -6.0
+
+[node name="ChairLeft" type="Node2D" parent="."]
+position = Vector2(56, 56)
+script = ExtResource("3_furn")
+dialogue_start_command = "start_chair"
+
+[node name="InteractableComponent" parent="ChairLeft" instance=ExtResource("5_interact")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChairLeft/InteractableComponent"]
+shape = SubResource("small_shape")
+
+[node name="InteractableLabelComponent" parent="ChairLeft" instance=ExtResource("6_label")]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -6.0
+
+[node name="ChairRight" type="Node2D" parent="."]
+position = Vector2(88, 56)
+script = ExtResource("3_furn")
+dialogue_start_command = "start_chair"
+
+[node name="InteractableComponent" parent="ChairRight" instance=ExtResource("5_interact")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChairRight/InteractableComponent"]
+shape = SubResource("small_shape")
+
+[node name="InteractableLabelComponent" parent="ChairRight" instance=ExtResource("6_label")]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -6.0
+
+[node name="Wardrobe" type="Node2D" parent="."]
+position = Vector2(136, 24)
+script = ExtResource("3_furn")
+dialogue_start_command = "start_cabinet"
+
+[node name="InteractableComponent" parent="Wardrobe" instance=ExtResource("5_interact")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wardrobe/InteractableComponent"]
+shape = SubResource("small_shape")
+
+[node name="InteractableLabelComponent" parent="Wardrobe" instance=ExtResource("6_label")]
+offset_left = -8.0
+offset_top = -32.0
+offset_right = 10.0
+offset_bottom = -14.0
+
+[node name="ExitDoor" type="Area2D" parent="."]
+position = Vector2(96, 120)
+collision_mask = 2
+script = ExtResource("4_exit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor"]
+shape = SubResource("exit_shape")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(80, 88)

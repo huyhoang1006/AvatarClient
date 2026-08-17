@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3]
+[gd_scene load_steps=20 format=3]
 
 [ext_resource type="TileSet" path="res://Tilesets/game_scene_tilemap.tres" id="1_6761a"]
 [ext_resource type="PackedScene" path="res://scenes/components/save_level_data_component.tscn" id="1_dga24"]
@@ -16,6 +16,11 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/egg.tscn" id="15_mkypq"]
 [ext_resource type="PackedScene" path="res://scenes/objects/milk.tscn" id="16_ndtll"]
 [ext_resource type="PackedScene" path="res://scenes/objects/animal_pen/animal_pen.tscn" id="17_pen"]
+[ext_resource type="Script" path="res://scenes/houses/house_door.gd" id="18_door"]
+[ext_resource type="PackedScene" path="res://scenes/houses/house_interior.tscn" id="19_intr"]
+
+[sub_resource type="RectangleShape2D" id="house_door_shape"]
+size = Vector2(40, 28)
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
@@ -129,3 +134,34 @@ output_reward_scenes = Array[PackedScene]([ExtResource("15_mkypq")])
 position = Vector2(530, 145)
 dialogue_start_command = "start_cow_pasture_box"
 output_reward_scenes = Array[PackedScene]([ExtResource("16_ndtll")])
+
+[node name="HouseSystem" type="Node2D" parent="."]
+
+[node name="HouseDoor" type="Area2D" parent="HouseSystem"]
+position = Vector2(317, 178)
+collision_mask = 2
+script = ExtResource("18_door")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseSystem/HouseDoor"]
+shape = SubResource("house_door_shape")
+
+[node name="HouseExitSpawn" type="Marker2D" parent="HouseSystem"]
+position = Vector2(317, 212)
+
+[node name="Interiors" type="Node2D" parent="HouseSystem"]
+
+[node name="HouseInterior" parent="HouseSystem/Interiors" instance=ExtResource("19_intr")]
+position = Vector2(672, 32)
+visible = false
+
+[node name="Background" type="CanvasLayer" parent="HouseSystem/Interiors"]
+layer = -1
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="HouseSystem/Interiors/Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09, 0.07, 0.06, 1)

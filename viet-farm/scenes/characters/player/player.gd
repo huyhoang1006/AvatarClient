@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 @export var swim_speed_scale: float = 0.6
 
+var control_enabled: bool = true
+
 var player_direction: Vector2
 
 var water_layer: TileMapLayer

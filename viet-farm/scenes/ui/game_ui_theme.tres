@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bfcxae1cintq7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_wood_panel"]
 content_margin_left = 4.0
@@ -15,42 +15,6 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_btn_normal"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.36, 0.26, 0.15, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.5, 0.36, 0.2, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_btn_hover"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.45, 0.32, 0.19, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.6, 0.44, 0.24, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBox_btn_pressed"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.24, 0.17, 0.1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.35, 0.25, 0.14, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_btn_disabled"]
 content_margin_left = 4.0
@@ -76,17 +40,53 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.9, 0.7, 0.4, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_btn_tool_selected"]
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_hover"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.45, 0.33, 0.18, 1)
+bg_color = Color(0.45, 0.32, 0.19, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 0.85, 0.5, 1)
+border_color = Color(0.6, 0.44, 0.24, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_normal"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.36, 0.26, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5, 0.36, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_pressed"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.24, 0.17, 0.1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.25, 0.14, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_counter"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.18, 0.14, 0.09, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.3, 0.18, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_item_panel"]
 content_margin_left = 2.0
@@ -100,17 +100,17 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.42, 0.3, 0.17, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBox_counter"]
-content_margin_left = 3.0
-content_margin_top = 3.0
-content_margin_right = 3.0
-content_margin_bottom = 3.0
-bg_color = Color(0.18, 0.14, 0.09, 0.9)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.4, 0.3, 0.18, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBox_btn_tool_selected"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.45, 0.33, 0.18, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.85, 0.5, 1)
 
 [resource]
 DarkWoodPanel/base_type = &"PanelContainer"

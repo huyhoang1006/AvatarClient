@@ -29,6 +29,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameDialogueManager="*res://scripts/globals/game_dialogue_manager.gd"
 SceneManager="*res://scripts/globals/scene_manager.gd"
 GameManager="*res://scripts/globals/game_manager.gd"
+HouseManager="*res://scripts/globals/house_manager.gd"
 
 [display]
 
@@ -112,7 +113,7 @@ game_menu={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/chest.dialogue", "res://dialogue/conversations/guide.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/chest.dialogue", "res://dialogue/conversations/guide.dialogue", "res://dialogue/conversations/house_furniture.dialogue")
 
 [layer_names]
 

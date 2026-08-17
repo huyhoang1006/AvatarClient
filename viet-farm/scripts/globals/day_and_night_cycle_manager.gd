@@ -30,6 +30,14 @@ func _process(delta: float) -> void:
 	recalculate_time()
 
 
+func advance_to_next_day() -> void:
+	var total_minutes: int = int(time / GAME_MINUTE_DURATION)
+	var day: int = total_minutes / MINUTES_PER_DAY
+	var next_day_total_minutes: int = (day + 1) * MINUTES_PER_DAY + 6 * MINUTES_PER_HOUR
+	time = next_day_total_minutes * GAME_MINUTE_DURATION
+	recalculate_time()
+
+
 func set_initial_time() -> void:
 	var initial_total_minutes = initial_day * MINUTES_PER_DAY + (initial_hour * MINUTES_PER_HOUR) + initial_minute
 	time = initial_total_minutes * GAME_MINUTE_DURATION

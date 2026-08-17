@@ -8,6 +8,8 @@ extends CharacterBody2D
 
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 @export var swim_speed_scale: float = 0.6
+@export var jump_height: float = 14.0
+@export var jump_duration: float = 0.45
 
 var control_enabled: bool = true
 
@@ -15,6 +17,7 @@ var player_direction: Vector2
 
 var water_layer: TileMapLayer
 var is_swimming: bool = false
+var is_jumping: bool = false
 
 func _ready() -> void:
 	ToolManager.tool_selected.connect(on_tool_selected)
@@ -37,6 +40,17 @@ func is_in_water() -> bool:
 
 func _physics_process(_delta: float) -> void:
 	update_water_visuals()
+	if Input.is_action_just_pressed("jump") and not is_jumping:
+		start_jump()
+
+
+func start_jump() -> void:
+	is_jumping = true
+	var tween := create_tween()
+	var base := animated_sprite_2d.position.y
+	tween.tween_property(animated_sprite_2d, "position:y", base - jump_height, jump_duration * 0.4)
+	tween.tween_property(animated_sprite_2d, "position:y", base, jump_duration * 0.6)
+	tween.tween_callback(func() -> void: is_jumping = false)
 
 
 func update_water_visuals() -> void:

@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=23 format=3]
 
 [ext_resource type="TileSet" path="res://Tilesets/game_scene_tilemap.tres" id="1_6761a"]
 [ext_resource type="PackedScene" path="res://scenes/components/save_level_data_component.tscn" id="1_dga24"]
-[ext_resource type="Texture2D" uid="uid://s7fyhy2kjfw3" path="res://assets/game/objects/dirt_path.png" id="20_path"]
+[ext_resource type="Texture2D" uid="uid://b8n2f0kksesqr" path="res://assets/game/objects/dirt_path_v.png" id="20_path"]
 [ext_resource type="Script" path="res://scripts/dirt_path.gd" id="21_pathgd"]
+[ext_resource type="Texture2D" uid="uid://dsgan2o70a2xi" path="res://assets/game/objects/house_sprite.png" id="22_house"]
+[ext_resource type="Texture2D" uid="uid://sjxjiw6klbbw" path="res://assets/game/objects/pond_sprite.png" id="23_pond"]
 [ext_resource type="PackedScene" path="res://scenes/components/field_cursor_component.tscn" id="2_sk5k4"]
 [ext_resource type="Script" path="res://scenes/components/field_cursor_component.gd" id="3_oc4kc"]
 [ext_resource type="PackedScene" path="res://scenes/components/save_data_component.tscn" id="3_qxy0u"]
@@ -23,6 +25,9 @@
 
 [sub_resource type="RectangleShape2D" id="house_door_shape"]
 size = Vector2(40, 28)
+
+[sub_resource type="RectangleShape2D" id="pond_shape"]
+size = Vector2(160, 120)
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
@@ -63,9 +68,21 @@ tile_set = ExtResource("1_6761a")
 
 [node name="DirtPath" type="Sprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(350, 470)
+position = Vector2(317, 410)
 texture = ExtResource("20_path")
 script = ExtResource("21_pathgd")
+
+[node name="Pond" type="Node2D" parent="."]
+position = Vector2(520, 620)
+
+[node name="PondSprite" type="Sprite2D" parent="Pond"]
+texture = ExtResource("23_pond")
+
+[node name="PondArea" type="Area2D" parent="Pond"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pond/PondArea"]
+shape = SubResource("pond_shape")
 
 [node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("2_sk5k4")]
 script = ExtResource("3_oc4kc")
@@ -127,6 +144,12 @@ position = Vector2(185, 262)
 
 [node name="MediumHouse" parent="Houses" instance=ExtResource("12_v6ha0")]
 position = Vector2(229, 230)
+
+[node name="HouseSprite" type="Sprite2D" parent="Houses/MediumHouse"]
+y_sort_enabled = true
+position = Vector2(95, 85)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("22_house")
 
 [node name="Guide" parent="." instance=ExtResource("6_sk5k4")]
 z_index = 2

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/maps/map_bounds.gd" id="1_bounds"]
+[ext_resource type="Script" path="res://scenes/maps/map_transition.gd" id="2_trans"]
+[ext_resource type="Texture2D" path="res://assets/art/ban_do/bac_ninh_dinh_lang_256.png" id="3_bg"]
+
+[sub_resource type="RectangleShape2D" id="trans_shape"]
+size = Vector2(48, 256)
+
+[node name="Alley" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+centered = false
+texture = ExtResource("3_bg")
+
+[node name="MapBounds" type="Node2D" parent="."]
+script = ExtResource("1_bounds")
+bounds_size = Vector2(6400, 256)
+
+[node name="SpawnPlayer" type="Marker2D" parent="."]
+position = Vector2(200, 128)
+
+[node name="SpawnHouse" type="Marker2D" parent="."]
+position = Vector2(6290, 128)
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="ToVillageRoad" type="Area2D" parent="Transitions"]
+position = Vector2(40, 128)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_trans")
+target_level = "village_road"
+target_spawn = "SpawnAlley"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/ToVillageRoad"]
+shape = SubResource("trans_shape")
+
+[node name="ToHouse" type="Area2D" parent="Transitions"]
+position = Vector2(6360, 128)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_trans")
+target_level = "house"
+target_spawn = "SpawnPlayer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transitions/ToHouse"]
+shape = SubResource("trans_shape")

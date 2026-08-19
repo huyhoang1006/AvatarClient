@@ -11,6 +11,13 @@ extends CharacterBody2D
 @export var jump_height: float = 14.0
 @export var jump_duration: float = 0.45
 
+const WALK_SHEET := preload("res://assets/game/characters/walk_clean.png")
+const IDLE_SHEET := preload("res://assets/game/characters/idle_grid.png")
+const FRAME_W := 192
+const FRAME_H := 256
+const WALK_COLS := 8
+const DIRECTIONS := ["front", "back", "left", "right"]
+
 var control_enabled: bool = true
 
 var player_direction: Vector2
@@ -18,24 +25,68 @@ var player_direction: Vector2
 var water_layer: TileMapLayer
 var is_swimming: bool = false
 var is_jumping: bool = false
+var pond_area: Area2D
 
 func _ready() -> void:
 	ToolManager.tool_selected.connect(on_tool_selected)
 	call_deferred("find_water_layer")
 	on_tool_selected(ToolManager.selected_tool)
+	_setup_animations()
+
+
+func _setup_animations() -> void:
+	var sf := SpriteFrames.new()
+
+	for row in range(DIRECTIONS.size()):
+		var dir: String = DIRECTIONS[row]
+		var idle_tex := _make_frame(IDLE_SHEET, Rect2(row * FRAME_W, 0, FRAME_W, FRAME_H))
+
+		sf.add_animation("idle_" + dir)
+		sf.set_animation_loop("idle_" + dir, true)
+		sf.add_frame("idle_" + dir, idle_tex)
+
+		sf.add_animation("walk_" + dir)
+		sf.set_animation_loop("walk_" + dir, true)
+		sf.set_animation_speed("walk_" + dir, 8.0)
+		for col in range(WALK_COLS):
+			sf.add_frame("walk_" + dir, _make_frame(WALK_SHEET, Rect2(col * FRAME_W, row * FRAME_H, FRAME_W, FRAME_H)))
+
+		for tool in ["chopping", "tilling", "watering"]:
+			sf.add_animation(tool + "_" + dir)
+			sf.set_animation_loop(tool + "_" + dir, false)
+			sf.add_frame(tool + "_" + dir, idle_tex)
+
+	animated_sprite_2d.sprite_frames = sf
+	animated_sprite_2d.scale = Vector2(0.125, 0.125)
+	animated_sprite_2d.play("idle_front")
+
+
+func _make_frame(sheet: Texture2D, region: Rect2) -> AtlasTexture:
+	var at := AtlasTexture.new()
+	at.atlas = sheet
+	at.region = region
+	return at
 
 
 func find_water_layer() -> void:
 	var level := get_tree().current_scene.find_child("Level1", true, false)
 	if level:
 		water_layer = level.get_node_or_null("GameTilemap/Water")
+		pond_area = level.get_node_or_null("Pond/PondArea")
 
 
 func is_in_water() -> bool:
-	if water_layer == null:
+	if is_jumping:
 		return false
-	var cell := water_layer.local_to_map(water_layer.to_local(global_position))
-	return water_layer.get_cell_source_id(cell) != -1
+	if water_layer != null:
+		var cell := water_layer.local_to_map(water_layer.to_local(global_position))
+		if water_layer.get_cell_source_id(cell) != -1:
+			return true
+	if pond_area != null and pond_area.has_overlapping_bodies():
+		for body in pond_area.get_overlapping_bodies():
+			if body == self:
+				return true
+	return false
 
 
 func _physics_process(_delta: float) -> void:

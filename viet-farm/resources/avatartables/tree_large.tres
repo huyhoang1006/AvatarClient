@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HarvestableData" load_steps=3 format=3 uid="uid://ihkbywepjv1o"]
+
+[ext_resource type="PackedScene" path="res://scenes/objects/trees/log.tscn" id="1_67jn3"]
+[ext_resource type="Script" uid="uid://cpukg7k2ufvj2" path="res://resources/harvestable_data.gd" id="1_iobpw"]
+
+[resource]
+script = ExtResource("1_iobpw")
+display_name = "Cây to"
+drop_scene = ExtResource("1_67jn3")
+metadata/_custom_type_script = "uid://cpukg7k2ufvj2"

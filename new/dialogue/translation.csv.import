@@ -15,5 +15,3 @@ dest_files=["res://dialogue/translation.vi.translation", "res://dialogue/transla
 
 compress=1
 delimiter=0
-unescape_keys=false
-unescape_translations=true

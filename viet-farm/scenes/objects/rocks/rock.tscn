@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://bq258prgu8agy"]
 
-[ext_resource type="Texture2D" path="res://assets/game/objects/Basic_Grass_Biom_things.png" id="1_aw33s"]
-[ext_resource type="Shader" path="res://scenes/objects/shake.gdshader" id="1_bntui"]
-[ext_resource type="Script" path="res://scenes/objects/rocks/rock.gd" id="2_f5itc"]
+[ext_resource type="Texture2D" uid="uid://csonvpixx8rkj" path="res://assets/game/objects/Basic_Grass_Biom_things.png" id="1_aw33s"]
+[ext_resource type="Shader" uid="uid://cb8xmegex52qd" path="res://scenes/objects/shake.gdshader" id="1_bntui"]
 [ext_resource type="PackedScene" path="res://scenes/components/hurt_component.tscn" id="2_msy0l"]
+[ext_resource type="Script" uid="uid://0ssc0p1jr2ls" path="res://scenes/objects/harvestable.gd" id="3_8i8v8"]
 [ext_resource type="PackedScene" path="res://scenes/components/damage_component.tscn" id="4_bntui"]
+[ext_resource type="Resource" uid="uid://rg3c3j4xbkbc" path="res://resources/avatartables/rock.tres" id="4_wj66e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8i8v8"]
 resource_local_to_scene = true
@@ -25,7 +26,8 @@ radius = 6.08276
 [node name="Rock" type="Sprite2D"]
 material = SubResource("ShaderMaterial_8i8v8")
 texture = SubResource("AtlasTexture_f5itc")
-script = ExtResource("2_f5itc")
+script = ExtResource("3_8i8v8")
+data = ExtResource("4_wj66e")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://bs1frl2nw7hxv"]
 
 [ext_resource type="Material" path="res://scenes/objects/trees/tree_shake_material.tres" id="1_f4wgc"]
-[ext_resource type="Texture2D" path="res://assets/game/objects/Basic_Grass_Biom_things.png" id="1_wjqkr"]
-[ext_resource type="Script" path="res://scenes/objects/trees/large_tree.gd" id="2_f4wgc"]
+[ext_resource type="Texture2D" uid="uid://csonvpixx8rkj" path="res://assets/game/objects/Basic_Grass_Biom_things.png" id="1_wjqkr"]
+[ext_resource type="Script" uid="uid://0ssc0p1jr2ls" path="res://scenes/objects/harvestable.gd" id="3_0ia52"]
 [ext_resource type="PackedScene" path="res://scenes/components/hurt_component.tscn" id="3_6vpey"]
 [ext_resource type="PackedScene" path="res://scenes/components/damage_component.tscn" id="4_0ia52"]
+[ext_resource type="Resource" uid="uid://ihkbywepjv1o" path="res://resources/avatartables/tree_large.tres" id="4_you1t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_you1t"]
 atlas = ExtResource("1_wjqkr")
@@ -21,7 +22,8 @@ material = ExtResource("1_f4wgc")
 position = Vector2(0, -4)
 texture = SubResource("AtlasTexture_you1t")
 offset = Vector2(0, -8)
-script = ExtResource("2_f4wgc")
+script = ExtResource("3_0ia52")
+data = ExtResource("4_you1t")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

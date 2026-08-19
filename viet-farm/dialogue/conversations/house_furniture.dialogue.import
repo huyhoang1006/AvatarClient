@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://crsbyswlnur7d"
+path="res://.godot/imported/house_furniture.dialogue-03a1ed93d2a9e4770f5053281e25d569.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/house_furniture.dialogue"
+dest_files=["res://.godot/imported/house_furniture.dialogue-03a1ed93d2a9e4770f5053281e25d569.tres"]
+
+[params]
+
+defaults=true

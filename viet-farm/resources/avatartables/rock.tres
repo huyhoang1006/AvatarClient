@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HarvestableData" load_steps=3 format=3 uid="uid://rg3c3j4xbkbc"]
+
+[ext_resource type="PackedScene" path="res://scenes/objects/rocks/stone.tscn" id="1_aqob5"]
+[ext_resource type="Script" uid="uid://cpukg7k2ufvj2" path="res://resources/harvestable_data.gd" id="2_rbyfq"]
+
+[resource]
+script = ExtResource("2_rbyfq")
+display_name = "Đá"
+drop_scene = ExtResource("1_aqob5")
+shake_intensity = 0.3
+shake_duration = 0.5
+metadata/_custom_type_script = "uid://cpukg7k2ufvj2"

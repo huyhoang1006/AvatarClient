@@ -1,0 +1,666 @@
+[gd_scene format=3 uid="uid://ber2dwequguae"]
+
+[ext_resource type="Script" uid="uid://bvhsg7fg1wigq" path="res://scripts/ui/settings_overlay.gd" id="1_dihqk"]
+[ext_resource type="Texture2D" uid="uid://b3mps5vmp4yw0" path="res://assets/ui/panels/main_menu_panel.png" id="2_31j3t"]
+[ext_resource type="FontFile" uid="uid://dm20pc80mpxk2" path="res://assets/fonts/UTM Facebook K&T/UTM FacebookB K&T.ttf" id="3_sd7f7"]
+[ext_resource type="Texture2D" uid="uid://j5yd1via20u" path="res://assets/ui/buttons/small/btn_brown_small.png" id="4_1rs2g"]
+[ext_resource type="Texture2D" uid="uid://cupsvyjrqxa2r" path="res://assets/ui/buttons/normal/btn_blue.png" id="4_4jc5x"]
+[ext_resource type="Texture2D" uid="uid://ciokpmo2e1oyx" path="res://assets/ui/buttons/normal/btn_green.png" id="5_1rs2g"]
+[ext_resource type="Texture2D" uid="uid://dy3m6m74a3xoj" path="res://assets/ui/others/blank.png" id="5_sd7f7"]
+[ext_resource type="Script" uid="uid://wo3uirqdep3y" path="res://scripts/ui/skin_dropdown.gd" id="6_0gpwu"]
+[ext_resource type="Texture2D" uid="uid://0e6fydmkpgh2" path="res://assets/ui/buttons/normal/btn_red.png" id="6_eemot"]
+[ext_resource type="Texture2D" uid="uid://c204mrpxftp6a" path="res://assets/ui/icons/icon_dropdown.png" id="6_yhhqs"]
+[ext_resource type="Texture2D" uid="uid://cb2pua1arypnm" path="res://assets/ui/toggles/toggle_off.png" id="7_rvft4"]
+[ext_resource type="Script" uid="uid://coxi1bj5wl667" path="res://scripts/ui/skin_toggle.gd" id="8_yoa3f"]
+[ext_resource type="Texture2D" uid="uid://cyk1vb42yjegc" path="res://assets/ui/toggles/toggle_on.png" id="10_0gpwu"]
+[ext_resource type="Texture2D" uid="uid://c0k38gs3ik15l" path="res://assets/ui/sliders/slider_track.png" id="11_rvft4"]
+[ext_resource type="Texture2D" uid="uid://bresy35huapoi" path="res://assets/ui/sliders/grabber.png" id="12_0gpwu"]
+[ext_resource type="Script" uid="uid://dfkqufojlvp6d" path="res://scripts/ui/skin_button.gd" id="13_rvft4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_faeo1"]
+texture = ExtResource("2_31j3t")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="FontVariation" id="FontVariation_m4ifk"]
+base_font = ExtResource("3_sd7f7")
+spacing_glyph = 1
+spacing_top = -1
+
+[sub_resource type="LabelSettings" id="LabelSettings_faeo1"]
+font = SubResource("FontVariation_m4ifk")
+font_size = 8
+font_color = Color(0.40392157, 0.21960784, 0.09019608, 1)
+outline_size = 4
+
+[sub_resource type="FontVariation" id="FontVariation_oikd3"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4ifk"]
+font = SubResource("FontVariation_oikd3")
+font_size = 6
+font_color = Color(0.40392157, 0.21960784, 0.09019608, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_eemot"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faeo1"]
+
+[sub_resource type="FontVariation" id="FontVariation_d7p4p"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_t4rtu"]
+font = SubResource("FontVariation_d7p4p")
+font_size = 6
+font_color = Color(0.40392157, 0.21960784, 0.09019608, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m4ifk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3x10"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t4rtu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d7p4p"]
+
+[sub_resource type="FontVariation" id="FontVariation_rdvbh"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_p3x10"]
+font = SubResource("FontVariation_rdvbh")
+font_size = 6
+font_color = Color(0.40392157, 0.21960784, 0.09019608, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_55p34"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rdvbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1ym5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gpwu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i203s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nq20m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7p4p"]
+font = SubResource("FontVariation_oikd3")
+font_size = 6
+font_color = Color(0.40392157, 0.21960784, 0.09019608, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5hp2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajvud"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs1wo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vfug0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jm0vb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w81jb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4ifk"]
+texture = ExtResource("4_4jc5x")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="FontVariation" id="FontVariation_h1ym5"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdvbh"]
+font = SubResource("FontVariation_h1ym5")
+font_size = 5
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pt5y6"]
+texture = ExtResource("5_1rs2g")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="FontVariation" id="FontVariation_gcha7"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1ym5"]
+font = SubResource("FontVariation_gcha7")
+font_size = 5
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tvgrr"]
+texture = ExtResource("6_eemot")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="FontVariation" id="FontVariation_5hp2y"]
+base_font = ExtResource("3_sd7f7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gcha7"]
+font = SubResource("FontVariation_5hp2y")
+font_size = 5
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[node name="SettingsOverlay" type="CanvasLayer" unique_id=867403880]
+process_mode = 3
+layer = 100
+script = ExtResource("1_dihqk")
+
+[node name="Root" type="Control" parent="." unique_id=2042101235]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="Root" unique_id=1798573315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="SettingsCenter" type="CenterContainer" parent="Root" unique_id=604561447]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelFrame" type="PanelContainer" parent="Root/SettingsCenter" unique_id=961682441]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_faeo1")
+
+[node name="MainLayout" type="VBoxContainer" parent="Root/SettingsCenter/PanelFrame" unique_id=2007644271]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="DisplaySection" type="VBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout" unique_id=973571693]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="SectionLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection" unique_id=2014409106]
+layout_mode = 2
+text = "SECTION_DISPLAY"
+label_settings = SubResource("LabelSettings_faeo1")
+vertical_alignment = 1
+uppercase = true
+
+[node name="ResolutionRow" type="HBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection" unique_id=125417775]
+layout_mode = 2
+
+[node name="ResolutionLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/ResolutionRow" unique_id=240346586]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+text = "LABEL_RESOLUTION"
+label_settings = SubResource("LabelSettings_m4ifk")
+vertical_alignment = 1
+uppercase = true
+
+[node name="ResolutionOptionWrapper" type="Control" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/ResolutionRow" unique_id=232921854]
+custom_minimum_size = Vector2(110, 12)
+layout_mode = 2
+
+[node name="ResolutionOptionBg" type="NinePatchRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/ResolutionRow/ResolutionOptionWrapper" unique_id=165535010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1rs2g")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="ResolutionOption" type="OptionButton" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/ResolutionRow/ResolutionOptionWrapper" unique_id=1264502677]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_eemot")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxEmpty_faeo1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_faeo1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_faeo1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_faeo1")
+theme_override_icons/arrow = ExtResource("5_sd7f7")
+alignment = 1
+script = ExtResource("6_0gpwu")
+popup_bg = ExtResource("4_1rs2g")
+popup_texture_margin = Vector4i(6, 6, 6, 7)
+popup_content_margin = Vector4i(4, 4, 4, 5)
+item_hover_color = Color(1, 1, 1, 0.09803922)
+font_color = Color(1, 1, 1, 1)
+font_size = 5
+
+[node name="ArrowIcon" type="TextureRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/ResolutionRow/ResolutionOptionWrapper" unique_id=334865417]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 4.0
+offset_right = 105.0
+offset_bottom = 7.0
+mouse_filter = 2
+texture = ExtResource("6_yhhqs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FullscreenRow" type="HBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection" unique_id=240350737]
+layout_mode = 2
+
+[node name="FullscreenLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/FullscreenRow" unique_id=1512256461]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+text = "LABEL_FULLSCREEN"
+label_settings = SubResource("LabelSettings_t4rtu")
+vertical_alignment = 1
+uppercase = true
+
+[node name="FullScreenToggleWrapper" type="Control" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/FullscreenRow" unique_id=1947640272]
+custom_minimum_size = Vector2(24, 12)
+layout_mode = 2
+
+[node name="FullscreenToggleBg" type="TextureRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/FullscreenRow/FullScreenToggleWrapper" unique_id=957899754]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 12.0
+texture = ExtResource("7_rvft4")
+
+[node name="FullscreenToggle" type="CheckButton" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/FullscreenRow/FullScreenToggleWrapper" unique_id=1660240912]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_m4ifk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p3x10")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4rtu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_d7p4p")
+theme_override_icons/checked = ExtResource("5_sd7f7")
+theme_override_icons/unchecked = ExtResource("5_sd7f7")
+theme_override_icons/checked_disabled = ExtResource("5_sd7f7")
+theme_override_icons/unchecked_disabled = ExtResource("5_sd7f7")
+theme_override_icons/checked_mirrored = ExtResource("5_sd7f7")
+theme_override_icons/unchecked_mirrored = ExtResource("5_sd7f7")
+theme_override_icons/checked_disabled_mirrored = ExtResource("5_sd7f7")
+theme_override_icons/unchecked_disabled_mirrored = ExtResource("5_sd7f7")
+script = ExtResource("8_yoa3f")
+texture_on = ExtResource("10_0gpwu")
+texture_off = ExtResource("7_rvft4")
+
+[node name="LanguageRow" type="HBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection" unique_id=1623787150]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/LanguageRow" unique_id=943351352]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+text = "LABEL_LANGUAGE"
+label_settings = SubResource("LabelSettings_p3x10")
+vertical_alignment = 1
+uppercase = true
+
+[node name="LanguageOptionWrapper" type="Control" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/LanguageRow" unique_id=1632140264]
+custom_minimum_size = Vector2(110, 12)
+layout_mode = 2
+
+[node name="LanguagueOptionBg" type="NinePatchRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/LanguageRow/LanguageOptionWrapper" unique_id=258555909]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1rs2g")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="LanguageOption" type="OptionButton" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/LanguageRow/LanguageOptionWrapper" unique_id=1105032338]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_55p34")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rdvbh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rdvbh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rdvbh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h1ym5")
+theme_override_icons/arrow = ExtResource("5_sd7f7")
+alignment = 1
+script = ExtResource("6_0gpwu")
+popup_bg = ExtResource("4_1rs2g")
+popup_texture_margin = Vector4i(6, 6, 6, 7)
+popup_content_margin = Vector4i(4, 4, 4, 5)
+item_hover_color = Color(1, 1, 1, 0.09803922)
+font_color = Color(1, 1, 1, 1)
+font_size = 5
+
+[node name="ArrowIcon" type="TextureRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/DisplaySection/LanguageRow/LanguageOptionWrapper" unique_id=231505938]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 4.0
+offset_right = 105.0
+offset_bottom = 7.0
+mouse_filter = 2
+texture = ExtResource("6_yhhqs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioSection" type="VBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout" unique_id=1025731598]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection" unique_id=767090474]
+layout_mode = 2
+text = "SECTION_AUDIO"
+label_settings = SubResource("LabelSettings_faeo1")
+vertical_alignment = 1
+uppercase = true
+
+[node name="MusicRow" type="HBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection" unique_id=1350793708]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/MusicRow" unique_id=1155129192]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+text = "LABEL_MUSIC"
+label_settings = SubResource("LabelSettings_m4ifk")
+vertical_alignment = 1
+uppercase = true
+
+[node name="MusicSliderWrapper" type="Control" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/MusicRow" unique_id=1323937709]
+custom_minimum_size = Vector2(110, 12)
+layout_mode = 2
+
+[node name="MusicSliderTrack" type="NinePatchRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/MusicRow/MusicSliderWrapper" unique_id=1801936538]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_rvft4")
+region_rect = Rect2(0, 0, 24, 12)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="MusicSlider" type="HSlider" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/MusicRow/MusicSliderWrapper" unique_id=552899217]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_icons/grabber = ExtResource("12_0gpwu")
+theme_override_icons/grabber_highlight = ExtResource("12_0gpwu")
+theme_override_icons/grabber_disabled = ExtResource("12_0gpwu")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_0gpwu")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_i203s")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_nq20m")
+max_value = 1.0
+step = 0.01
+
+[node name="MusicValueLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/MusicRow/MusicSliderWrapper" unique_id=420386397]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_d7p4p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SfxRow" type="HBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection" unique_id=1691471329]
+layout_mode = 2
+
+[node name="SfxLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/SfxRow" unique_id=844326903]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+text = "LABEL_SFX"
+label_settings = SubResource("LabelSettings_m4ifk")
+vertical_alignment = 1
+uppercase = true
+
+[node name="SfxSliderWrapper" type="Control" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/SfxRow" unique_id=1377770909]
+custom_minimum_size = Vector2(110, 12)
+layout_mode = 2
+
+[node name="SfxSliderTrack" type="NinePatchRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/SfxRow/SfxSliderWrapper" unique_id=158243840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_rvft4")
+region_rect = Rect2(0, 0, 24, 12)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="SfxSlider" type="HSlider" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/SfxRow/SfxSliderWrapper" unique_id=1732116516]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = -20.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_icons/grabber = ExtResource("12_0gpwu")
+theme_override_icons/grabber_highlight = ExtResource("12_0gpwu")
+theme_override_icons/grabber_disabled = ExtResource("12_0gpwu")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_5hp2y")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ajvud")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_bs1wo")
+max_value = 1.0
+step = 0.01
+
+[node name="SfxValueLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/SfxRow/SfxSliderWrapper" unique_id=2038446286]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_d7p4p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmbientRow" type="HBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection" unique_id=1602124571]
+layout_mode = 2
+
+[node name="AmbientLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/AmbientRow" unique_id=1390567655]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+text = "LABEL_AMBIENT"
+label_settings = SubResource("LabelSettings_m4ifk")
+vertical_alignment = 1
+uppercase = true
+
+[node name="AmbientSliderWrapper" type="Control" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/AmbientRow" unique_id=835796296]
+custom_minimum_size = Vector2(110, 12)
+layout_mode = 2
+
+[node name="AmbientSliderTrack" type="NinePatchRect" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/AmbientRow/AmbientSliderWrapper" unique_id=1977508955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_rvft4")
+region_rect = Rect2(0, 0, 24, 12)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="AmbientSlider" type="HSlider" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/AmbientRow/AmbientSliderWrapper" unique_id=1531010261]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = -20.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_icons/grabber = ExtResource("12_0gpwu")
+theme_override_icons/grabber_highlight = ExtResource("12_0gpwu")
+theme_override_icons/grabber_disabled = ExtResource("12_0gpwu")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_vfug0")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_jm0vb")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_w81jb")
+max_value = 1.0
+step = 0.01
+
+[node name="AmbientValueLabel" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/AudioSection/AmbientRow/AmbientSliderWrapper" unique_id=2050274523]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_d7p4p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomRow" type="HBoxContainer" parent="Root/SettingsCenter/PanelFrame/MainLayout" unique_id=1242777446]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ResetButton" type="Button" parent="Root/SettingsCenter/PanelFrame/MainLayout/BottomRow" unique_id=1218776131]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(54, 18)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_m4ifk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m4ifk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m4ifk")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_m4ifk")
+script = ExtResource("13_rvft4")
+
+[node name="LabelText" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/BottomRow/ResetButton" unique_id=1669461703]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BTN_DEFAULT"
+label_settings = SubResource("LabelSettings_rdvbh")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ApplyButton" type="Button" parent="Root/SettingsCenter/PanelFrame/MainLayout/BottomRow" unique_id=1020538843]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(54, 18)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_pt5y6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pt5y6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pt5y6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pt5y6")
+script = ExtResource("13_rvft4")
+
+[node name="LabelText" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/BottomRow/ApplyButton" unique_id=1007583930]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BTN_APPLY"
+label_settings = SubResource("LabelSettings_h1ym5")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="BackButton" type="Button" parent="Root/SettingsCenter/PanelFrame/MainLayout/BottomRow" unique_id=1639870201]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(54, 18)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_tvgrr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tvgrr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tvgrr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_tvgrr")
+script = ExtResource("13_rvft4")
+
+[node name="LabelText" type="Label" parent="Root/SettingsCenter/PanelFrame/MainLayout/BottomRow/BackButton" unique_id=1778414122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BTN_CLOSE"
+label_settings = SubResource("LabelSettings_gcha7")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

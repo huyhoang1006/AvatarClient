@@ -22,15 +22,17 @@ GameState="*uid://pt2wsxxk7ntj"
 AvatarClient="*uid://bq8xfqkf2r4yn"
 SettingsManager="*uid://cr6mhx7i0i5o0"
 LanguageManager="*uid://dychv8p5souys"
+SettingsOverlay="*uid://ber2dwequguae"
 
 [display]
 
 window/size/viewport_width=384
 window/size/viewport_height=256
 window/size/resizable=false
-window/size/window_width_override=1152
-window/size/window_height_override=768
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 
@@ -55,6 +57,10 @@ move_right={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://dialogue/translation.en.translation", "res://dialogue/translation.vi.translation")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -63,5 +69,7 @@ move_right={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true

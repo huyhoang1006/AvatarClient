@@ -1,7 +1,97 @@
 [gd_scene format=3 uid="uid://sdu65udeng6h"]
 
 [ext_resource type="Script" uid="uid://bpd8wxk8hupre" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://bl3o86ixcb8j7" path="res://assets/ui/login_background.png" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c7lqbwixbt5dh" path="res://assets/ui/backgrounds/background.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://b3mps5vmp4yw0" path="res://assets/ui/panels/main_menu_panel.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://ciokpmo2e1oyx" path="res://assets/ui/buttons/normal/btn_green.png" id="4_oa1go"]
+[ext_resource type="Script" uid="uid://dfkqufojlvp6d" path="res://scripts/ui/skin_button.gd" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cupsvyjrqxa2r" path="res://assets/ui/buttons/normal/btn_blue.png" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://u523x8ro147y" path="res://assets/ui/buttons/normal/btn_brown.png" id="6_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://cosgxmd424jje" path="res://assets/ui/icons/icon_play.png" id="6_rcqid"]
+[ext_resource type="Texture2D" uid="uid://0e6fydmkpgh2" path="res://assets/ui/buttons/normal/btn_red.png" id="7_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://pyhn0ai7dhjj" path="res://assets/ui/icons/icon_gamepad.png" id="7_flqon"]
+[ext_resource type="FontFile" uid="uid://dm20pc80mpxk2" path="res://assets/fonts/UTM Facebook K&T/UTM FacebookB K&T.ttf" id="7_rcqid"]
+[ext_resource type="Texture2D" uid="uid://b8r4qjl6md564" path="res://assets/ui/icons/icon_settings.png" id="8_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://ckup84hubc6p6" path="res://assets/ui/icons/icon_exit.png" id="9_jk1qb"]
+
+[sub_resource type="Gradient" id="Gradient_m4ifk"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bqqt6"]
+gradient = SubResource("Gradient_m4ifk")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("4_oa1go")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="FontVariation" id="FontVariation_m4ifk"]
+base_font = ExtResource("7_rcqid")
+spacing_top = -1
+
+[sub_resource type="LabelSettings" id="LabelSettings_faeo1"]
+font = SubResource("FontVariation_m4ifk")
+font_size = 8
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
+texture = ExtResource("5_tbmy8")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="FontVariation" id="FontVariation_flqon"]
+base_font = ExtResource("7_rcqid")
+spacing_top = -1
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgwnu"]
+font = SubResource("FontVariation_flqon")
+font_size = 8
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtw2f"]
+texture = ExtResource("6_jk1qb")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="FontVariation" id="FontVariation_rcqid"]
+base_font = ExtResource("7_rcqid")
+spacing_top = -1
+
+[sub_resource type="LabelSettings" id="LabelSettings_flqon"]
+font = SubResource("FontVariation_rcqid")
+font_size = 8
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+texture = ExtResource("7_5dd4i")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="FontVariation" id="FontVariation_lgwnu"]
+base_font = ExtResource("7_rcqid")
+spacing_top = -1
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dd4i"]
+font = SubResource("FontVariation_lgwnu")
+font_size = 8
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
 
 [node name="MainMenu" type="Control" unique_id=1712904511]
 layout_mode = 3
@@ -19,11 +109,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_bqqt6")
+texture = ExtResource("2_ekxnf")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="MenuCenter" type="CenterContainer" parent="." unique_id=452062613]
+[node name="BottomOverlay" type="TextureRect" parent="." unique_id=1547354660]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_bqqt6")
+expand_mode = 1
+
+[node name="PanelCenter" type="CenterContainer" parent="." unique_id=1910888458]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,31 +133,168 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuButtons" type="VBoxContainer" parent="MenuCenter" unique_id=71935121]
+[node name="PanelBox" type="Control" parent="PanelCenter" unique_id=537521506]
+custom_minimum_size = Vector2(110, 120)
 layout_mode = 2
-theme_override_constants/separation = 8
 
-[node name="ContinueButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=1661799233]
-custom_minimum_size = Vector2(160, 20)
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "Continue"
+[node name="PanelImage" type="TextureRect" parent="PanelCenter/PanelBox" unique_id=249310673]
+custom_minimum_size = Vector2(110, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bqqt6")
 
-[node name="NewGameButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=1153744365]
-custom_minimum_size = Vector2(160, 20)
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "New Game"
+[node name="ContinueButton" type="Button" parent="PanelCenter/PanelBox" unique_id=1111446780]
+custom_minimum_size = Vector2(92, 24)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bqqt6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bqqt6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_bqqt6")
+script = ExtResource("5_jk1qb")
 
-[node name="SettingsButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=1792499850]
-custom_minimum_size = Vector2(160, 20)
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "Settings"
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/ContinueButton" unique_id=1611808481]
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 27.0
+offset_bottom = 18.0
+mouse_filter = 2
+texture = ExtResource("6_rcqid")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="QuitButton" type="Button" parent="MenuCenter/MenuButtons" unique_id=664403771]
-custom_minimum_size = Vector2(160, 20)
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "Quit
-"
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/ContinueButton" unique_id=375717661]
+custom_minimum_size = Vector2(58, 17)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 20.0
+text = "BTN_CONTINUE"
+label_settings = SubResource("LabelSettings_faeo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="NewGameButton" type="Button" parent="PanelCenter/PanelBox" unique_id=1137639347]
+custom_minimum_size = Vector2(92, 24)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 35.0
+offset_right = 101.0
+offset_bottom = 59.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_wu84c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wu84c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wu84c")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wu84c")
+script = ExtResource("5_jk1qb")
+
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/NewGameButton" unique_id=1773471722]
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 27.0
+offset_bottom = 18.0
+mouse_filter = 2
+texture = ExtResource("7_flqon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/NewGameButton" unique_id=903079317]
+custom_minimum_size = Vector2(58, 17)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 89.0
+offset_bottom = 20.0
+text = "BTN_NEW_GAME"
+label_settings = SubResource("LabelSettings_lgwnu")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SettingsButton" type="Button" parent="PanelCenter/PanelBox" unique_id=511535456]
+custom_minimum_size = Vector2(92, 24)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 61.0
+offset_right = 101.0
+offset_bottom = 85.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rtw2f")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rtw2f")
+script = ExtResource("5_jk1qb")
+
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/SettingsButton" unique_id=2042810547]
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 27.0
+offset_bottom = 18.0
+mouse_filter = 2
+texture = ExtResource("8_lgwnu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/SettingsButton" unique_id=285911405]
+custom_minimum_size = Vector2(58, 17)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 20.0
+text = "BTN_SETTINGS"
+label_settings = SubResource("LabelSettings_flqon")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="QuitButton" type="Button" parent="PanelCenter/PanelBox" unique_id=947614570]
+custom_minimum_size = Vector2(92, 24)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 87.0
+offset_right = 101.0
+offset_bottom = 111.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oa1go")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_oa1go")
+script = ExtResource("5_jk1qb")
+
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/QuitButton" unique_id=1356902390]
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 27.0
+offset_bottom = 18.0
+mouse_filter = 2
+texture = ExtResource("9_jk1qb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/QuitButton" unique_id=1036440880]
+custom_minimum_size = Vector2(58, 17)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 20.0
+text = "BTN_QUIT"
+label_settings = SubResource("LabelSettings_5dd4i")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

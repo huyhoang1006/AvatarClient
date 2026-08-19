@@ -1,21 +1,48 @@
 [gd_scene format=3 uid="uid://qffae0oyex8f"]
 
 [ext_resource type="Script" uid="uid://c8oebj74a5ttw" path="res://scripts/boot.gd" id="1_n61mk"]
-[ext_resource type="Texture2D" uid="uid://gqejhfg7lrv7" path="res://assets/ui/logo.png" id="2_r2kcx"]
+[ext_resource type="Texture2D" uid="uid://dogxt0ih47xqs" path="res://assets/ui/logos/logo.png" id="2_r2kcx"]
 
-[node name="Boot" type="Node2D" unique_id=1974198768]
-script = ExtResource("1_n61mk")
-
-[node name="Background" type="ColorRect" parent="." unique_id=158891935]
+[node name="Boot" type="Control" unique_id=1590572062]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 384.0
-offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n61mk")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1233893559]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Logo" type="Sprite2D" parent="." unique_id=1992538711]
-position = Vector2(192, 128)
-scale = Vector2(0.25, 0.25)
+[node name="Logo" type="TextureRect" parent="." unique_id=1487673463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_r2kcx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BlackBase" type="ColorRect" parent="." unique_id=640651461]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

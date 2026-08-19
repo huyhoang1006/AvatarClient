@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://5riovy6f7dbc"]
 
 [ext_resource type="Script" uid="uid://bm0x5d47ipr1s" path="res://scripts/login_screen.gd" id="1_e8ckn"]
-[ext_resource type="Texture2D" uid="uid://bl3o86ixcb8j7" path="res://assets/ui/login_background.png" id="2_8q002"]
+[ext_resource type="Texture2D" uid="uid://c7lqbwixbt5dh" path="res://assets/ui/backgrounds/background.png" id="2_e8ckn"]
+[ext_resource type="Texture2D" uid="uid://c7tfk04hrfr04" path="res://assets/ui/panels/login_panel_frame.png" id="3_8q002"]
+[ext_resource type="Texture2D" uid="uid://cupsvyjrqxa2r" path="res://assets/ui/buttons/normal/btn_blue.png" id="5_xqvf2"]
+[ext_resource type="Script" uid="uid://dfkqufojlvp6d" path="res://scripts/ui/skin_button.gd" id="6_navmr"]
+[ext_resource type="Texture2D" uid="uid://ciokpmo2e1oyx" path="res://assets/ui/buttons/normal/btn_green.png" id="7_5m8ma"]
+[ext_resource type="Texture2D" uid="uid://bp62lbx5r8s12" path="res://assets/ui/icons/icon_login.png" id="7_navmr"]
+[ext_resource type="Texture2D" uid="uid://b021ejevimg80" path="res://assets/ui/icons/icon_guest.png" id="7_xqvf2"]
+[ext_resource type="Texture2D" uid="uid://j5yd1via20u" path="res://assets/ui/buttons/small/btn_brown_small.png" id="9_l756y"]
+[ext_resource type="Texture2D" uid="uid://b8r4qjl6md564" path="res://assets/ui/icons/icon_settings.png" id="11_navmr"]
+[ext_resource type="Texture2D" uid="uid://crdg58bymq6fr" path="res://assets/ui/buttons/small/btn_red_small.png" id="12_bmn8x"]
+[ext_resource type="Texture2D" uid="uid://ckup84hubc6p6" path="res://assets/ui/icons/icon_exit.png" id="13_6jw0y"]
+[ext_resource type="FontFile" uid="uid://dm20pc80mpxk2" path="res://assets/fonts/UTM Facebook K&T/UTM FacebookB K&T.ttf" id="13_bmn8x"]
 
 [sub_resource type="Gradient" id="Gradient_m4ifk"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
@@ -10,28 +21,70 @@ colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
 gradient = SubResource("Gradient_m4ifk")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8ckn"]
-bg_color = Color(0, 0, 0, 0.15686275)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 0.84705883, 0.4509804, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="FontVariation" id="FontVariation_t4rtu"]
+base_font = ExtResource("13_bmn8x")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q002"]
-bg_color = Color(0, 0, 0, 0.27450982)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="LabelSettings" id="LabelSettings_m4ifk"]
+font = SubResource("FontVariation_t4rtu")
+font_size = 12
+font_color = Color(0.40392157, 0.21960784, 0.09019608, 1)
+outline_size = 4
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4ifk"]
+texture = ExtResource("5_xqvf2")
+
+[sub_resource type="FontVariation" id="FontVariation_cmc67"]
+base_font = ExtResource("13_bmn8x")
+
+[sub_resource type="LabelSettings" id="LabelSettings_okyly"]
+font = SubResource("FontVariation_cmc67")
+font_size = 10
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4rtu"]
+texture = ExtResource("7_5m8ma")
+
+[sub_resource type="FontVariation" id="FontVariation_bmn8x"]
+base_font = ExtResource("13_bmn8x")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmc67"]
+font = SubResource("FontVariation_bmn8x")
+font_size = 10
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3x10"]
+texture = ExtResource("9_l756y")
+
+[sub_resource type="FontVariation" id="FontVariation_6380c"]
+base_font = ExtResource("13_bmn8x")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajffm"]
+font = SubResource("FontVariation_6380c")
+font_size = 5
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d7p4p"]
+texture = ExtResource("12_bmn8x")
+
+[sub_resource type="FontVariation" id="FontVariation_navmr"]
+base_font = ExtResource("13_bmn8x")
+variation_embolden = 0.25
+
+[sub_resource type="LabelSettings" id="LabelSettings_faeo1"]
+font = SubResource("FontVariation_navmr")
+font_size = 5
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.09803922)
+shadow_offset = Vector2(0, 0)
 
 [node name="LoginScreen" type="Control" unique_id=865553487]
 layout_mode = 3
@@ -49,7 +102,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8q002")
+texture = ExtResource("2_e8ckn")
 expand_mode = 1
 stretch_mode = 6
 
@@ -65,34 +118,232 @@ grow_vertical = 0
 texture = SubResource("GradientTexture2D_faeo1")
 expand_mode = 1
 
-[node name="BottomCenter" type="CenterContainer" parent="." unique_id=1720113468]
+[node name="PanelCenter" type="CenterContainer" parent="." unique_id=1095094714]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -69.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
-[node name="BottomPanel" type="VBoxContainer" parent="BottomCenter" unique_id=255277266]
+[node name="PanelBox" type="Control" parent="PanelCenter" unique_id=714776103]
+custom_minimum_size = Vector2(180, 120)
 layout_mode = 2
-theme_override_constants/separation = 6
 
-[node name="PlatformLoginButton" type="Button" parent="BottomCenter/BottomPanel" unique_id=1206534212]
-custom_minimum_size = Vector2(200, 20)
-layout_mode = 2
-theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+[node name="PanelImage" type="TextureRect" parent="PanelCenter/PanelBox" unique_id=1486895834]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8q002")
+
+[node name="TitleLabel" type="Label" parent="PanelCenter/PanelBox" unique_id=590825842]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -53.0
+offset_right = 56.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_scale = Vector2(1.1, 0.9)
+text = "LOGIN_TITLE"
+label_settings = SubResource("LabelSettings_m4ifk")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="LoginButton" type="Button" parent="PanelCenter/PanelBox" unique_id=1879540585]
+custom_minimum_size = Vector2(112, 24)
+layout_mode = 0
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 146.0
+offset_bottom = 57.0
 theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxTexture_m4ifk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m4ifk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_m4ifk")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_m4ifk")
 disabled = true
-text = "Đăng nhập qua nền tảng (sắp ra mắt)"
+script = ExtResource("6_navmr")
 
-[node name="GuestButton" type="Button" parent="BottomCenter/BottomPanel" unique_id=1248688129]
-custom_minimum_size = Vector2(200, 20)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.9137255, 0.6901961, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_e8ckn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8q002")
-text = "Chơi với tư cách khách"
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/LoginButton" unique_id=32011174]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 5.0
+offset_right = 34.0
+offset_bottom = 18.0
+mouse_filter = 2
+texture = ExtResource("7_navmr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/LoginButton" unique_id=656343537]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BTN_LOGIN"
+label_settings = SubResource("LabelSettings_okyly")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="GuestButton" type="Button" parent="PanelCenter/PanelBox" unique_id=1446681478]
+custom_minimum_size = Vector2(112, 24)
+layout_mode = 0
+offset_left = 34.0
+offset_top = 63.0
+offset_right = 146.0
+offset_bottom = 87.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_t4rtu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t4rtu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t4rtu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t4rtu")
+script = ExtResource("6_navmr")
+
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/GuestButton" unique_id=638420333]
+custom_minimum_size = Vector2(14, 13)
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 32.0
+offset_bottom = 18.0
+mouse_filter = 2
+texture = ExtResource("7_xqvf2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/GuestButton" unique_id=175335151]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BTN_GUEST"
+label_settings = SubResource("LabelSettings_cmc67")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SettingsButton" type="Button" parent="PanelCenter/PanelBox" unique_id=1777847096]
+custom_minimum_size = Vector2(52, 14)
+layout_mode = 0
+offset_left = 34.0
+offset_top = 93.0
+offset_right = 86.0
+offset_bottom = 107.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3x10")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p3x10")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p3x10")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_p3x10")
+script = ExtResource("6_navmr")
+
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/SettingsButton" unique_id=1970233940]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 13.0
+offset_bottom = 10.0
+mouse_filter = 2
+texture = ExtResource("11_navmr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/SettingsButton" unique_id=2014665664]
+custom_minimum_size = Vector2(38, 9)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 22.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BTN_SETTINGS"
+label_settings = SubResource("LabelSettings_ajffm")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="QuitButton" type="Button" parent="PanelCenter/PanelBox" unique_id=163789093]
+custom_minimum_size = Vector2(52, 14)
+layout_mode = 0
+offset_left = 94.0
+offset_top = 93.0
+offset_right = 146.0
+offset_bottom = 107.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d7p4p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d7p4p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d7p4p")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_d7p4p")
+script = ExtResource("6_navmr")
+
+[node name="Icon" type="TextureRect" parent="PanelCenter/PanelBox/QuitButton" unique_id=1709415141]
+custom_minimum_size = Vector2(7, 7)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 13.0
+offset_bottom = 10.0
+texture = ExtResource("13_6jw0y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelText" type="Label" parent="PanelCenter/PanelBox/QuitButton" unique_id=1723134043]
+custom_minimum_size = Vector2(38, 9)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 22.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BTN_QUIT"
+label_settings = SubResource("LabelSettings_faeo1")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="FadeInOverlay" type="ColorRect" parent="." unique_id=827594176]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -7,19 +7,21 @@ extends CanvasModulate
 		DayAndNightCycleManager.initial_day = id
 		DayAndNightCycleManager.set_initial_time()
 
-@export var initial_hour: int = 12:
+## 6 giờ sáng — giống Stardew, và khớp với giờ thức dậy sau khi ngủ (bed.gd)
+@export var initial_hour: int = 6:
 	set(ih):
 		initial_hour = ih
 		DayAndNightCycleManager.initial_hour = ih
 		DayAndNightCycleManager.set_initial_time()
 
-@export var initial_minute: int = 30:
+@export var initial_minute: int = 0:
 	set(im):
 		initial_minute = im
 		DayAndNightCycleManager.initial_minute = im
 		DayAndNightCycleManager.set_initial_time()
 
 @export var day_night_gradient_texture: GradientTexture2D
+
 
 func _ready() -> void:
 	DayAndNightCycleManager.initial_day = initial_day

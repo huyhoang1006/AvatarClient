@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CropData" load_steps=3 format=3 uid="uid://b87h07rdoqhbn"]
+
+[ext_resource type="PackedScene" path="res://scenes/objects/plants/corn_harvest.tscn" id="1_bt4td"]
+[ext_resource type="Script" uid="uid://cn11hl8171b6j" path="res://resources/crop_data.gd" id="1_q1hcc"]
+
+[resource]
+script = ExtResource("1_q1hcc")
+display_name = "Ngô"
+harvest_scene = ExtResource("1_bt4td")

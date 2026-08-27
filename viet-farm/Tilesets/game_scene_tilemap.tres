@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cwwcpm6vvcsyy" path="res://assets/game/tilesets/Tilled_Dirt_Wide.png" id="3_7et01"]
 [ext_resource type="Texture2D" uid="uid://csonvpixx8rkj" path="res://assets/game/objects/Basic_Grass_Biom_things.png" id="4_whadf"]
 [ext_resource type="PackedScene" uid="uid://b10rwns864dqt" path="res://scenes/houses/large_house.tscn" id="5_house"]
-[ext_resource type="PackedScene" path="res://scenes/objects/trees/small_tree.tscn" id="6_stree"]
-[ext_resource type="PackedScene" path="res://scenes/objects/rocks/rock.tscn" id="7_rock"]
-[ext_resource type="PackedScene" path="res://scenes/objects/trees/large_tree.tscn" id="8_ltree"]
+[ext_resource type="PackedScene" uid="uid://mob1l8o3x7bc" path="res://scenes/objects/trees/small_tree.tscn" id="6_stree"]
+[ext_resource type="PackedScene" uid="uid://bq258prgu8agy" path="res://scenes/objects/rocks/rock.tscn" id="7_rock"]
+[ext_resource type="PackedScene" uid="uid://bs1frl2nw7hxv" path="res://scenes/objects/trees/large_tree.tscn" id="8_ltree"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7et01"]
 texture = ExtResource("1_xec2p")

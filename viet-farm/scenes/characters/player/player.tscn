@@ -1,13 +1,11 @@
-[gd_scene load_steps=48 format=3 uid="uid://qkn2l3dnyj7l"]
+[gd_scene load_steps=46 format=3 uid="uid://qkn2l3dnyj7l"]
 
 [ext_resource type="Script" uid="uid://bnkfi8ihadwlp" path="res://scenes/characters/player/player.gd" id="1_6avc5"]
 [ext_resource type="Texture2D" uid="uid://wtw1ieks0xfw" path="res://assets/game/characters/player_walk_sheet.png" id="1_new"]
 [ext_resource type="Script" uid="uid://b7o5lfn7wla" path="res://scripts/state_machine/node_state_machine.gd" id="3_hss88"]
 [ext_resource type="Script" uid="uid://ccq2i4iro8ck7" path="res://scenes/characters/player/idle_state.gd" id="4_qd3e3"]
 [ext_resource type="Script" uid="uid://c6eq1xnw45qjt" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
-[ext_resource type="Script" uid="uid://0ca6x67elija" path="res://scenes/characters/player/chopping_state.gd" id="7_42irl"]
-[ext_resource type="Script" uid="uid://b8363ahbwb053" path="res://scenes/characters/player/tilling_state.gd" id="8_3xnwo"]
-[ext_resource type="Script" uid="uid://d0ynxn2msdq45" path="res://scenes/characters/player/watering_state.gd" id="9_djydg"]
+[ext_resource type="Script" path="res://scenes/characters/player/tool_action_state.gd" id="7_42irl"]
 [ext_resource type="Script" path="res://scenes/characters/player/fishing_state.gd" id="11_fish"]
 [ext_resource type="Texture2D" path="res://assets/game/characters/fishing_rod_visual.png" id="12_rod_visual"]
 [ext_resource type="Texture2D" path="res://assets/game/characters/water_splash.png" id="13_water_splash"]
@@ -431,17 +429,20 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("7_42irl")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+animation_prefix = "chopping"
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="Tilling" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("8_3xnwo")
+script = ExtResource("7_42irl")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+animation_prefix = "tilling"
 
 [node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
-script = ExtResource("9_djydg")
+script = ExtResource("7_42irl")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+animation_prefix = "watering"
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="Fishing" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]

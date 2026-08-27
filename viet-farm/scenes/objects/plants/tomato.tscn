@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://cbswu70pwvnmo"]
 
-[ext_resource type="Script" path="res://scenes/objects/plants/tomato.gd" id="1_i4hd5"]
-[ext_resource type="Texture2D" path="res://assets/game/objects/Basic_Plants.png" id="2_huvgt"]
+[ext_resource type="Script" uid="uid://r4nid5qshbr3" path="res://scenes/objects/plants/crop.gd" id="1_wpajg"]
+[ext_resource type="Resource" uid="uid://cayq1e0cqu5d2" path="res://resources/avatartables/tomato.tres" id="2_aborc"]
+[ext_resource type="Texture2D" uid="uid://bkdpigxqjoqy0" path="res://assets/game/objects/Basic_Plants.png" id="2_huvgt"]
 [ext_resource type="PackedScene" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_83wcf"]
 [ext_resource type="PackedScene" path="res://scenes/objects/plants/watering_particles.tscn" id="4_wpajg"]
 [ext_resource type="PackedScene" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_aborc"]
@@ -14,7 +15,8 @@ size = Vector2(11, 7)
 
 [node name="Tomato" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_i4hd5")
+script = ExtResource("1_wpajg")
+data = ExtResource("2_aborc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)

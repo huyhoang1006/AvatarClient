@@ -1,14 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-## Hướng → hậu tố tên animation. "idle" + "_front" = "idle_front"
-const DIRECTION_SUFFIX: Dictionary = {
-	Vector2.UP: "back",
-	Vector2.DOWN: "front",
-	Vector2.LEFT: "left",
-	Vector2.RIGHT: "right",
-}
-
 ## Hướng → vị trí vùng va chạm khi vung công cụ
 const TOOL_HIT_OFFSET: Dictionary = {
 	Vector2.UP: Vector2(0, -18),
@@ -69,7 +61,15 @@ func _physics_process(_delta: float) -> void:
 ## Hậu tố animation cho một hướng. Vector2.ZERO = dùng hướng đang đứng.
 func direction_suffix(direction: Vector2 = Vector2.ZERO) -> String:
 	var dir: Vector2 = direction if direction != Vector2.ZERO else player_direction
-	return DIRECTION_SUFFIX.get(dir, "front")
+
+	if dir == Vector2.ZERO:
+		return "front"
+
+	# trục nào lệch nhiều hơn thì quyết định hướng nhìn
+	if absf(dir.x) > absf(dir.y):
+		return "right" if dir.x > 0.0 else "left"
+
+	return "front" if dir.y > 0.0 else "back"
 
 
 ## Phát animation theo hướng: play_directional("walk") → play("walk_left")

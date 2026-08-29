@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6qtt8gqa0e04"]
+
+[ext_resource type="PackedScene" uid="uid://rnmhis8bkgeq" path="res://scenes/areas/san_nha.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dbf4f75jdrhoa" path="res://scenes/player/player.tscn" id="2_4wyf3"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Areas" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="SanNha" parent="Areas" instance=ExtResource("1_rwgxs")]
+
+[node name="Player" parent="." instance=ExtResource("2_4wyf3")]
+position = Vector2(300, 300)

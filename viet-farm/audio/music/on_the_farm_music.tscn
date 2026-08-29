@@ -1,4 +1,0 @@
-[gd_scene format=3]
-
-[node name="OnTheFarmMusic" type="AudioStreamPlayer2D"]
-bus = &"Music"

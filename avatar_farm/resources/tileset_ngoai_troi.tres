@@ -1,20 +1,40 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b8lnb5xnuww7g"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://b8lnb5xnuww7g"]
 
-[ext_resource type="Texture2D" uid="uid://cma0lvygqixa1" path="res://assets/tilesets/tileset_tam.png" id="1_12u2t"]
+[ext_resource type="Texture2D" uid="uid://bdufjxm87xlso" path="res://assets/tilesets/nen_co.png" id="1_12u2t"]
+[ext_resource type="Texture2D" uid="uid://d3slb6kjn6fpc" path="res://assets/tilesets/dat.png" id="2_vbp20"]
+[ext_resource type="Texture2D" uid="uid://bupipjv1308h0" path="res://assets/tilesets/co_2.png" id="3_vbp20"]
+[ext_resource type="Texture2D" uid="uid://bywlmo7i6ti7h" path="res://assets/tilesets/co_6.png" id="4_ebnl5"]
+[ext_resource type="Texture2D" uid="uid://digb0iuihtgox" path="res://assets/tilesets/nen_co_nhat.png" id="5_fk61p"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vpvxx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1bf5"]
 texture = ExtResource("1_12u2t")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:0/0 = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebnl5"]
+texture = ExtResource("3_vbp20")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ef8e"]
+texture = ExtResource("4_ebnl5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7rm8"]
+texture = ExtResource("5_fk61p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fk61p"]
+texture = ExtResource("2_vbp20")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_vpvxx")
+sources/0 = SubResource("TileSetAtlasSource_j1bf5")
+sources/2 = SubResource("TileSetAtlasSource_ebnl5")
+sources/3 = SubResource("TileSetAtlasSource_0ef8e")
+sources/4 = SubResource("TileSetAtlasSource_i7rm8")
+sources/5 = SubResource("TileSetAtlasSource_fk61p")

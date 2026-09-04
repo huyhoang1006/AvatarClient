@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dbf4f75jdrhoa"]
+[gd_scene load_steps=45 format=3 uid="uid://dbf4f75jdrhoa"]
 
 [ext_resource type="Script" uid="uid://c30vm6hxqjuws" path="res://scripts/player/player.gd" id="1_qek5x"]
 [ext_resource type="Texture2D" uid="uid://cbc7dg64o2h6v" path="res://assets/characters/nvc_di_len.png" id="2_5gtgg"]
@@ -8,6 +8,18 @@
 [ext_resource type="Script" uid="uid://iqwbqgh3u4o4" path="res://scripts/player/node_state_machine.gd" id="6_gx1jg"]
 [ext_resource type="Script" uid="uid://b5cexffhdlm1k" path="res://scripts/player/idle_state.gd" id="7_ugbui"]
 [ext_resource type="Script" uid="uid://du0cy5wujglc6" path="res://scripts/player/walk_state.gd" id="8_fcs02"]
+
+[sub_resource type="Gradient" id="Gradient_qek5x"]
+offsets = PackedFloat32Array(0, 0.52666664, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5gtgg"]
+gradient = SubResource("Gradient_qek5x")
+width = 30
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ek41f"]
 atlas = ExtResource("2_5gtgg")
@@ -280,6 +292,11 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qek5x")
+
+[node name="Bong" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.2509804)
+position = Vector2(0, -2)
+texture = SubResource("GradientTexture2D_5gtgg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -31)
